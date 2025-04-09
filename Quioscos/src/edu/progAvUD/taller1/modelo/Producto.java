@@ -7,15 +7,15 @@ public class Producto {
     private String nombre;
     private String descripcion;
     private double precio;
-    private double precioPuntos;
+    private double puntosEquivalentes;
     private Image imagen;
 
-    public Producto(String nombre, String descripcion, double precio, double precioPuntos, Image imagen) {
+    public Producto(String nombre, String descripcion, double precio, Image imagen) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
-        this.precioPuntos = precioPuntos;
         this.imagen = imagen;
+        this.puntosEquivalentes = precio/1000;
     }
 
     public String getNombre() {
@@ -42,12 +42,12 @@ public class Producto {
         this.precio = precio;
     }
 
-    public double getPrecioPuntos() {
-        return precioPuntos;
+    public double getPuntosEquivalentes() {
+        return puntosEquivalentes;
     }
 
-    public void setPrecioPuntos(double precioPuntos) {
-        this.precioPuntos = precioPuntos;
+    public void setPuntosEquivalentes(double puntosEquivalentes) {
+        this.puntosEquivalentes = puntosEquivalentes;
     }
 
     public Image getImagen() {
