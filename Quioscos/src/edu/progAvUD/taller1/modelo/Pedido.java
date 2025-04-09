@@ -11,16 +11,17 @@ import java.util.HashMap;
  * @author Andres Felipe
  */
 public class Pedido {
-    public int numeroPedido;
-    public HashMap<Producto, Integer> productos;
-    public Cliente cliente;
-    public double precioTotal;
-    public String metodoDePago;
 
-    public Pedido(int numeroPedido, HashMap<Producto, Integer> productos, Cliente cliente, double precioTotal, String metodoDePago) {
+    private int numeroPedido;
+    private Cliente cliente;
+    private HashMap<OpcionesMenu, Integer> opcionesMenu;
+    private double precioTotal;
+    private String metodoDePago;
+
+    public Pedido(int numeroPedido, Cliente cliente, HashMap<OpcionesMenu, Integer> opcionesMenu, double precioTotal, String metodoDePago) {
         this.numeroPedido = numeroPedido;
-        this.productos = productos;
         this.cliente = cliente;
+        this.opcionesMenu = new HashMap<>();
         this.precioTotal = precioTotal;
         this.metodoDePago = metodoDePago;
     }
@@ -33,20 +34,20 @@ public class Pedido {
         this.numeroPedido = numeroPedido;
     }
 
-    public HashMap<Producto, Integer> getProductos() {
-        return productos;
-    }
-
-    public void setProductos(HashMap<Producto, Integer> productos) {
-        this.productos = productos;
-    }
-
     public Cliente getCliente() {
         return cliente;
     }
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+    }
+
+    public HashMap<OpcionesMenu, Integer> getOpcionesMenu() {
+        return opcionesMenu;
+    }
+
+    public void setOpcionesMenu(HashMap<OpcionesMenu, Integer> opcionesMenu) {
+        this.opcionesMenu = opcionesMenu;
     }
 
     public double getPrecioTotal() {
@@ -64,5 +65,5 @@ public class Pedido {
     public void setMetodoDePago(String metodoDePago) {
         this.metodoDePago = metodoDePago;
     }
-    
+
 }

@@ -4,20 +4,20 @@ import java.awt.Image;
 
 public class Producto {
     
-    private String nombre;
-    private String descripcion;
-    private double precio;
-    private double puntosEquivalentes;
-    private Image imagen;
+    protected String nombre;
+    protected String descripcion;
+    protected double precio;
+    protected double puntosEquivalentes;
+    protected Image imagen;
 
-    public Producto(String nombre, String descripcion, double precio, Image imagen) {
+    public Producto(String nombre, String descripcion, double precio, double puntosEquivalentes, Image imagen) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.puntosEquivalentes = puntosEquivalentes;
         this.imagen = imagen;
-        this.puntosEquivalentes = precio/1000;
     }
-
+    
     public String getNombre() {
         return nombre;
     }

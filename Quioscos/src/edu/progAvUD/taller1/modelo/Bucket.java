@@ -1,59 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package edu.progAvUD.taller1.modelo;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
+import java.util.HashMap;
 /**
  *
  * @author Ganimedes
  */
-public class Bucket {
-    private String tipoBucket;
-    private List <PresaPollo> presas;
-    private int capacidad;
+public class Bucket extends OpcionesMenu{
+    
+    private HashMap<PresaPollo, Integer> presas;
+    private static final int cantidadMax = 8;
 
-    public Bucket(String tipoBucket,int capacidad) {
-        this.tipoBucket = tipoBucket;
-        this.capacidad = capacidad;
-        this.presas = new ArrayList<>();
-    }
-
-    public String getTipoBucket() {
-        return tipoBucket;
-    }
-
-    public void setTipoBucket(String tipoBucket) {
-        this.tipoBucket = tipoBucket;
-    }
-
-    public List<PresaPollo> getPresas() {
-        return presas;
-    }
-
-    public void setPresas(List<PresaPollo> presas) {
+    public Bucket(HashMap<PresaPollo, Integer> presas, String nombre) {
+        super(nombre);
         this.presas = presas;
     }
 
-    public int getCapacidad() {
-        return capacidad;
+    public HashMap<PresaPollo, Integer> getPresas() {
+        return presas;
     }
 
-    public void setCapacidad(int capacidad) {
-        this.capacidad = capacidad;
+    public void setPresas(HashMap<PresaPollo, Integer> presas) {
+        this.presas = presas;
     }
 
-    
-    
-    
-    
-
-
-
-    
     
 }

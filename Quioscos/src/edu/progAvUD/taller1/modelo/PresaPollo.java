@@ -4,40 +4,34 @@
  */
 package edu.progAvUD.taller1.modelo;
 
+import java.awt.Image;
 
-public class PresaPollo {
-    private String tipoPresa;
-    private double precioPresa;
-    private int cantidadPresas;
 
-    public PresaPollo(String tipoPresa, double precioPresa, int cantidadPresas) {
-        this.tipoPresa = tipoPresa;
-        this.precioPresa = precioPresa;
-        this.cantidadPresas = cantidadPresas;
+public class PresaPollo extends Producto{
+
+    private String parte;
+    private String tipoCoccion;
+
+    public PresaPollo(String parte, String tipoCoccion, String nombre, String descripcion, double precio, double puntosEquivalentes, Image imagen) {
+        super(nombre, descripcion, precio, puntosEquivalentes, imagen);
+        this.parte = parte;
+        this.tipoCoccion = tipoCoccion;
     }
 
-    public String getTipoPresa() {
-        return tipoPresa;
+    public String getParte() {
+        return parte;
     }
 
-    public void setTipoPresa(String tipoPresa) {
-        this.tipoPresa = tipoPresa;
+    public void setParte(String parte) {
+        this.parte = parte;
     }
 
-    public double getPrecioPresa() {
-        return precioPresa;
+    public String getTipoCoccion() {
+        return tipoCoccion;
     }
 
-    public void setPrecioPresa(double precioPresa) {
-        this.precioPresa = precioPresa;
-    }
-
-    public int getCantidadPresas() {
-        return cantidadPresas;
-    }
-
-    public void setCantidadPresas(int cantidadPresas) {
-        this.cantidadPresas = cantidadPresas;
+    public void setTipoCoccion(String tipoCoccion) {
+        this.tipoCoccion = tipoCoccion;
     }
     
 }

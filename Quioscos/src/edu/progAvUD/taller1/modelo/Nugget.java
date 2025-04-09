@@ -1,16 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package edu.progAvUD.taller1.modelo;
 
 import java.awt.Image;
 
-
 public class Nugget extends Producto{
     
-    public Nugget(String nombre, String descripcion, double precio, Image imagen) {
-        super(nombre, descripcion, precio, imagen);
+    private String tipoNugget;
+    private String terminoCoccion;
+    
+    public Nugget(String nombre, String descripcion, double precio, double puntosEquivalentes, Image imagen) {
+        super(nombre, descripcion, precio, puntosEquivalentes, imagen);
+    }
+
+    public String getTipoNugget() {
+        return tipoNugget;
+    }
+
+    public void setTipoNugget(String tipoNugget) {
+        this.tipoNugget = tipoNugget;
+    }
+
+    public String getTerminoCoccion() {
+        return terminoCoccion;
+    }
+
+    public void setTerminoCoccion(String terminoCoccion) {
+        this.terminoCoccion = terminoCoccion;
     }
     
 }

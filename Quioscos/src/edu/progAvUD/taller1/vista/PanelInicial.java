@@ -59,9 +59,7 @@ public class PanelInicial extends javax.swing.JPanel {
                         .addComponent(jButtonSiguiente))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(122, 122, 122)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)))
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jRadioButtonLlevar)
@@ -69,7 +67,10 @@ public class PanelInicial extends javax.swing.JPanel {
                         .addComponent(jRadioButtonComerAqui))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(66, 66, 66)
-                        .addComponent(jLabel2)))
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(139, 139, 139)
+                        .addComponent(jLabel3)))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
