@@ -7,40 +7,38 @@ package edu.progAvUD.taller1.modelo;
  */
 public class OpcionesMenu {
     
-    private String nombre;
-    private double precioTotal;
-    private double puntosEquivalentes;
+    private String nombreMenu;
+    private double precioTotalMenu;
+    private double puntosEquivalentesMenu;
 
-    public OpcionesMenu(String nombre, double precioTotal, double puntosEquivalentes) {
-        this.nombre = nombre;
-        this.precioTotal = precioTotal;
-        this.puntosEquivalentes = puntosEquivalentes;
+    public OpcionesMenu(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu) {
+        this.nombreMenu = nombreMenu;
+        this.precioTotalMenu = precioTotalMenu;
+        this.puntosEquivalentesMenu = puntosEquivalentesMenu;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreMenu() {
+        return nombreMenu;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreMenu(String nombreMenu) {
+        this.nombreMenu = nombreMenu;
     }
 
-    public double getPrecioTotal() {
-        return precioTotal;
+    public double getPrecioTotalMenu() {
+        return precioTotalMenu;
     }
 
-    public void setPrecioTotal(double precioTotal) {
-        this.precioTotal = precioTotal;
+    public void setPrecioTotalMenu(double precioTotalMenu) {
+        this.precioTotalMenu = precioTotalMenu;
     }
 
-    public double getPuntosEquivalentes() {
-        return puntosEquivalentes;
+    public double getPuntosEquivalentesMenu() {
+        return puntosEquivalentesMenu;
     }
 
-    public void setPuntosEquivalentes(double puntosEquivalentes) {
-        this.puntosEquivalentes = puntosEquivalentes;
+    public void setPuntosEquivalentesMenu(double puntosEquivalentesMenu) {
+        this.puntosEquivalentesMenu = puntosEquivalentesMenu;
     }
-    
-    
-    
+
 }

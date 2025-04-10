@@ -7,9 +7,11 @@ import java.awt.event.ActionListener;
 public class ControlGrafico implements ActionListener {
     
     private VentanaPrincipal ventanaPrincipal;
+    private ControlPrincipal controlPrincipal;
 
     public ControlGrafico() {
         this.ventanaPrincipal = new VentanaPrincipal(this);
+        this.controlPrincipal = new ControlPrincipal(this);
         ventanaPrincipal.mostrarPanel(ventanaPrincipal.panelInicial);
         
         ventanaPrincipal.panelInicial.jButtonSiguiente.addActionListener(this);

@@ -1,0 +1,63 @@
+[33mcommit b06f57a8d4cb5d652df3e96428600b004f3b7e7b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: AndPre <afpreciadoc@udistrital.edu.co>
+Date:   Wed Apr 9 12:25:22 2025 -0500
+
+    Modificacion de clases modelo
+
+[33mcommit 583e171a11b3f045635dc53a0b99402d43919794[m
+Author: Juan Diaz <juanchodiazr777@gmail.com>
+Date:   Tue Apr 8 23:31:36 2025 -0500
+
+    Agregacion productos y propuesta manejo Bucket
+
+[33mcommit d380892f023549f5706179fc773261190edae63d[m
+Author: Juan Diaz <juanchodiazr777@gmail.com>
+Date:   Tue Apr 8 22:29:31 2025 -0500
+
+    Modificacion atributo puntosEquivalentes
+
+[33mcommit 3c80cee8562719de78681d667a982cbeae8b71dd[m
+Author: Cristianlol789 <cristianaguilartreras08@gmail.com>
+Date:   Tue Apr 8 19:55:16 2025 -0500
+
+    Se añadieron los getters and setters y los constructores
+
+[33mcommit c18284b51c3b3a08cc4403d32183a3ba871e7f0a[m
+Author: AndPre <afpreciadoc@udistrital.edu.co>
+Date:   Tue Apr 8 19:45:01 2025 -0500
+
+    Adicion de atributos al modelo
+
+[33mcommit 6bc39df54d8896c4d6dab9e946fc18c5ce782c7e[m
+Author: AndPre <afpreciadoc@udistrital.edu.co>
+Date:   Tue Apr 8 10:04:56 2025 -0500
+
+    Cracion paquete vista (inyeccion Control), cambios en ControlGrafico y creacion de paqute imagenes
+
+[33mcommit a165507b974a21c8557734ca9bfbcb069f7681fe[m
+Author: User <User@DESKTOP-D4K75HQ>
+Date:   Sun Apr 6 15:46:25 2025 -0500
+
+    Cambios en el modelo y control
+
+[33mcommit 8206c5a606a5d681a4eb7f5d37b9499d21c24190[m
+Author: Juan Diaz <juanchodiazr777@gmail.com>
+Date:   Sat Apr 5 20:12:42 2025 -0500
+
+    Modificacion nombre paquetes
+
+[33mcommit 6be92e77b264c1862bfc14c0f5f35506fd9ab0bf[m
+Author: Juan Diaz <juanchodiazr777@gmail.com>
+Date:   Sat Apr 5 20:05:32 2025 -0500
+
+    Creacion clase producto
+
+[33mcommit 1f45a2f27718f87b7b215118a7f0bfd70724302e[m
+Author: User <User@DESKTOP-D4K75HQ>
+Date:   Sat Apr 5 19:58:58 2025 -0500
+
+[33mcommit 497311901da489c34aa518ff749f46228c3055a8[m
+Author: Cristianlol789 <cristianaguilartreras08@gmail.com>
+Date:   Sat Apr 5 19:07:54 2025 -0500
+
+    Initial commit
