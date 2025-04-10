@@ -8,8 +8,8 @@ public class ParaCompartir extends OpcionesMenu {
     
     private Producto[] producto;
 
-    public ParaCompartir(Producto[] producto, String nombre) {
-        super(nombre,0,0);
+    public ParaCompartir(Producto[] producto, String nombre, double precioTotal, double puntosEquivalentes) {
+        super(nombre, precioTotal, puntosEquivalentes);
         this.producto = producto;
     }
 

@@ -14,13 +14,14 @@ public class Combo extends OpcionesMenu{
     private HashMap<String, Boolean> agrandados; 
     private ArrayList<String> adiciones;
 
-    public Combo(Producto[] producto, HashMap<String, Boolean> agrandados, ArrayList<String> adiciones, String nombre) {
-        super(nombre, 0, 0);
+    public Combo(Producto[] producto, HashMap<String, Boolean> agrandados, ArrayList<String> adiciones, String nombre, double precioTotal, double puntosEquivalentes) {
+        super(nombre, precioTotal, puntosEquivalentes);
         this.producto = new Producto[4];
         this.producto[0] = producto[0];
         this.producto[1] = producto[1];
         this.producto[2] = producto[2];
         this.producto[3] = producto[3];
+    
         this.agrandados = agrandados;
         this.adiciones = adiciones;
     }

@@ -11,8 +11,8 @@ public class Bucket extends OpcionesMenu{
     private HashMap<PresaPollo, Integer> presas;
     private static final int cantidadMax = 8;
 
-    public Bucket(HashMap<PresaPollo, Integer> presas, String nombre) {
-        super(nombre, 0, 0);
+    public Bucket(HashMap<PresaPollo, Integer> presas, String nombre, double precioTotal, double puntosEquivalentes) {
+        super(nombre, precioTotal, puntosEquivalentes);
         this.presas = presas;
     }
 
