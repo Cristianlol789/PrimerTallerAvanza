@@ -10,7 +10,7 @@ public class Unidad extends OpcionesMenu{
     private Producto producto;
 
     public Unidad(Producto producto, String nombre) {
-        super(nombre);
+        super(nombre,0,0);
         this.producto = producto;
     }
 

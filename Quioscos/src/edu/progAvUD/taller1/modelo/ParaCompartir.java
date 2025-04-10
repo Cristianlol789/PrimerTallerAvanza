@@ -9,7 +9,7 @@ public class ParaCompartir extends OpcionesMenu {
     private Producto[] producto;
 
     public ParaCompartir(Producto[] producto, String nombre) {
-        super(nombre);
+        super(nombre,0,0);
         this.producto = producto;
     }
 

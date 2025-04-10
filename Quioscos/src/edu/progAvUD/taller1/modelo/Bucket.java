@@ -12,7 +12,7 @@ public class Bucket extends OpcionesMenu{
     private static final int cantidadMax = 8;
 
     public Bucket(HashMap<PresaPollo, Integer> presas, String nombre) {
-        super(nombre);
+        super(nombre, 0, 0);
         this.presas = presas;
     }
 
