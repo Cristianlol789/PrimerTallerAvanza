@@ -9,8 +9,8 @@ public class Unidad extends OpcionesMenu{
     
     private Producto producto;
 
-    public Unidad(Producto producto, String nombre) {
-        super(nombre,0,0);
+    public Unidad(Producto producto, String nombre, double precioTotal, double puntosEquivalentes) {
+        super(nombre, precioTotal, puntosEquivalentes);
         this.producto = producto;
     }
 
