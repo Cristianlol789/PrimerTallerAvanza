@@ -19,14 +19,8 @@ public class ControlClientes {
     }
 
     public String crearCliente(double cedula, double puntos) {
-        for (Cliente cliente : clientes) {
-            if (cliente.getCedula() == cedula) {
-                double puntosIniciales = cliente.getPuntos();
-                double totalPuntos = puntosIniciales + puntos;
-                cliente.setPuntos(totalPuntos);
-                return "Bienvenido " + cliente.getNombre() + ". Esperamos que disfrute su comida. Los puntos obtenidos por su compra fueron " + puntos + " y su total actual de puntos es " + cliente.getPuntos();
-            }
-        }
+        
+        actualizarPuntos(cedula, puntos);
         String[] nombres = {"Ana", "Luis", "Camila", "Andrés", "Mariana", "Juan", "Carlos", "Isabella",
             "Ricardo", "Valeria", "Santiago", "Laura", "Miguel", "Paula", "Gabriel",
             "Daniela", "Julián", "Natalia", "Sebastián", "Andrea"};
@@ -34,7 +28,8 @@ public class ControlClientes {
         String[] culturas = {"Wayuu", "Kogi", "Arhuaco", "Nasa", "Embera", "Wounaan", "Inga",
             "Zenú", "Sikuani", "U'wa", "Misak", "Ticuna"};
         Random random = new Random();
-        String nombreSeleccionado = nombres[random.nextInt(nombres.length)];
+        String nombreSeleccionado;
+        nombreSeleccionado = nombres[random.nextInt(nombres.length)];
         int edadSeleccionada = edades[random.nextInt(edades.length)];
         Cliente clienteNuevo;
         int valor = random.nextInt(2);  
@@ -45,6 +40,17 @@ public class ControlClientes {
             clienteNuevo = new Cliente(cedula, nombreSeleccionado, edadSeleccionada, puntos);
         }
         clientes.add(clienteNuevo);  
-        return "Bienvenido " + clienteNuevo.getNombre() + ". Gracias por registrarse. Los puntos obtenidos por su compra fueron " + puntos + " y su total actual de puntos es " + clienteNuevo.getPuntos();
+        return "Bienvenido " + clienteNuevo.getNombre() + ". Gracias por registrarse";
+        
+    }
+    
+    public void actualizarPuntos(double cedula, double puntos){
+           for (Cliente cliente : clientes) {
+            if (cliente.getCedula() == cedula) {
+                double puntosIniciales = cliente.getPuntos();
+                double totalPuntos = puntosIniciales + puntos;
+                cliente.setPuntos(totalPuntos);
+            }
+        }
     }
 }
