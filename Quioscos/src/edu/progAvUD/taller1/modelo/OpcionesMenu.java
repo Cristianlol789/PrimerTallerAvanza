@@ -7,9 +7,9 @@ package edu.progAvUD.taller1.modelo;
  */
 public class OpcionesMenu {
     
-    private String nombreMenu;
-    private double precioTotalMenu;
-    private double puntosEquivalentesMenu;
+    protected String nombreMenu;
+    protected double precioTotalMenu;
+    protected double puntosEquivalentesMenu;
 
     public OpcionesMenu(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu) {
         this.nombreMenu = nombreMenu;

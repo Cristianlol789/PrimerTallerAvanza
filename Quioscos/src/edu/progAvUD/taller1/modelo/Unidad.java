@@ -10,9 +10,9 @@ public class Unidad extends OpcionesMenu{
     
     private Producto producto;
 
-    public Unidad(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String nombre, String descripcion, double precio, double puntosEquivalentes, Image imagen) {
+    public Unidad(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, Image imagen1) {
         super(nombreMenu, precioTotalMenu, puntosEquivalentesMenu);
-        this.producto = new Producto(nombre, descripcion, precio, puntosEquivalentes, imagen);
+        this.producto = new Producto(nombre1, descripcion1, precio1, puntosEquivalentes1, imagen1);
     }
 
     public Producto getProducto() {
