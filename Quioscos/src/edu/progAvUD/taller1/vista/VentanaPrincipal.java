@@ -5,6 +5,7 @@
 package edu.progAvUD.taller1.vista;
 
 import edu.progAvUD.taller1.control.ControlGrafico;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -15,6 +16,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private ControlGrafico controlGrafico;
     public PanelInicial panelInicial;
+    public PanelBuckets panelBuckets;
+    public PanelCombos panelCombos;
+    public PanelOtrosProductos panelOtrosProductos;
+    public PanelPagar panelPagar;
+    public PanelParaCompartir panelParaCompartir;
     
     
     public VentanaPrincipal(ControlGrafico controlGrafico) {
@@ -22,7 +28,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         initComponents();
         setVisible(true);
         this.panelInicial = new PanelInicial();
+        this.panelBuckets = new PanelBuckets();
+        this.panelCombos = new PanelCombos();
+        this.panelOtrosProductos = new PanelOtrosProductos();
+        this.panelPagar = new PanelPagar();
+        this.panelParaCompartir = new PanelParaCompartir();
+        jMenuBar1.setVisible(false);
     }
+
+    
+    
     
     public void mostrarPanel(JPanel panel) {
         setContentPane(panel);
@@ -30,6 +45,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null); // Centra la ventana en la mitad de la pantalla
         revalidate();
         repaint();
+    }
+    
+    public void mostrarMensajeExito(String mensaje){
+        JOptionPane.showMessageDialog(this, mensaje, "Exito", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    public void mostrarMensajeError(String mensaje){
+        JOptionPane.showMessageDialog(this, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
     }
     
     /**
@@ -41,8 +64,57 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItemCrearBucket = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItemCrearCombo = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItemParaCompartir = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItemMasProductos = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuItemPagar = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+
+        jMenu1.setText("Buckets");
+
+        jMenuItemCrearBucket.setText("Crea tu bucket");
+        jMenu1.add(jMenuItemCrearBucket);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Combos");
+
+        jMenuItemCrearCombo.setText("Crea tu Combo");
+        jMenu2.add(jMenuItemCrearCombo);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Para Compartir");
+
+        jMenuItemParaCompartir.setText("Combos Para Compartir");
+        jMenu3.add(jMenuItemParaCompartir);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu5.setText("Otros Productos");
+
+        jMenuItemMasProductos.setText("Mas Productos");
+        jMenu5.add(jMenuItemMasProductos);
+
+        jMenuBar1.add(jMenu5);
+
+        jMenu6.setText("Pagar");
+
+        jMenuItemPagar.setText("Ir a pagar");
+        jMenu6.add(jMenuItemPagar);
+
+        jMenuBar1.add(jMenu6);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -52,12 +124,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 387, Short.MAX_VALUE)
+            .addGap(0, 364, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    public javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JMenuItem jMenuItemCrearBucket;
+    public javax.swing.JMenuItem jMenuItemCrearCombo;
+    public javax.swing.JMenuItem jMenuItemMasProductos;
+    public javax.swing.JMenuItem jMenuItemPagar;
+    public javax.swing.JMenuItem jMenuItemParaCompartir;
     // End of variables declaration//GEN-END:variables
 }

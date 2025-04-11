@@ -99,7 +99,7 @@ public class PanelInicial extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JRadioButton jRadioButtonComerAqui;
-    private javax.swing.JRadioButton jRadioButtonLlevar;
+    public javax.swing.JRadioButton jRadioButtonComerAqui;
+    public javax.swing.JRadioButton jRadioButtonLlevar;
     // End of variables declaration//GEN-END:variables
 }
