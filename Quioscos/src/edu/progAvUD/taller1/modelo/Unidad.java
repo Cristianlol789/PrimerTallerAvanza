@@ -1,5 +1,6 @@
 package edu.progAvUD.taller1.modelo;
 
+import edu.progAvUD.taller1.control.ControlProducto;
 import java.awt.Image;
 
 /**
@@ -10,9 +11,9 @@ public class Unidad extends OpcionesMenu{
     
     private Producto producto;
 
-    public Unidad(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, Image imagen1) {
+    public Unidad(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, Image imagen, String identificador, ControlProducto controlProducto) {
         super(nombreMenu, precioTotalMenu, puntosEquivalentesMenu);
-        this.producto = new Producto(nombre1, descripcion1, precio1, puntosEquivalentes1, imagen1);
+        this.producto = controlProducto.crearProducto(tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, imagen, identificador);
     }
 
     public Producto getProducto() {

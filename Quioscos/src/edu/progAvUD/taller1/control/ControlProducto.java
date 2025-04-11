@@ -6,6 +6,7 @@ import edu.progAvUD.taller1.modelo.Nugget;
 import edu.progAvUD.taller1.modelo.Papas;
 import edu.progAvUD.taller1.modelo.PresaPollo;
 import edu.progAvUD.taller1.modelo.Producto;
+import edu.progAvUD.taller1.modelo.Strips;
 import edu.progAvUD.taller1.modelo.Wrap;
 import java.awt.Image;
 
@@ -41,6 +42,9 @@ public class ControlProducto {
             case "Wrap":
                 Producto wrap = new Wrap(tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, imagen);
                 return wrap;
+            case "Strips":
+                Producto strips = new Strips(nombre, tipo, nombre, descripcion, precio, puntosEquivalentes, imagen);
+                return strips;
             default:
                 return null;
         }

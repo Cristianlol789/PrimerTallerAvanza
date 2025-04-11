@@ -15,9 +15,12 @@ import java.util.HashMap;
 public class ControlOpcionesMenu {
 
     private ControlPrincipal controlprincipal;
-    private Combo combo;
     
     public ControlOpcionesMenu(ControlPrincipal controlPrincipal) {
         this.controlprincipal = controlPrincipal;
+    }
+    
+    public void crearMenu(){
+        
     }
 }
