@@ -1,4 +1,3 @@
-
 package edu.progAvUD.taller1.modelo;
 
 import java.awt.Image;

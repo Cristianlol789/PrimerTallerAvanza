@@ -8,10 +8,10 @@ public class Hamburguesa extends Producto{
     private String tipoPan;
     private String tipoCarne;
 
-    public Hamburguesa(String tipoDePan, String tipoDeCarne, String nombre, String descripcion, double precio, double puntosEquivalentes, Image imagen) {
+    public Hamburguesa(String tipoPan, String tipoCarne, String nombre, String descripcion, double precio, double puntosEquivalentes, Image imagen) {
         super(nombre, descripcion, precio, puntosEquivalentes, imagen);
-        this.tipoPan = tipoDePan;
-        this.tipoCarne = tipoDeCarne;
+        this.tipoPan = tipoPan;
+        this.tipoCarne = tipoCarne;
     }
 
     public String getTipoPan() {

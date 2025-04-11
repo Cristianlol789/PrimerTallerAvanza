@@ -1,23 +1,32 @@
-
 package edu.progAvUD.taller1.modelo;
 
 import java.awt.Image;
 
 public class Wrap extends Producto{
     
-    private String proteina;
+    private String tipoProteina;
+    private String tipoQueso;
 
-    public Wrap(String proteina, String nombre, String descripcion, double precio, double puntosEquivalentes, Image imagen) {
+    public Wrap(String tipoProteina, String tipoQueso, String nombre, String descripcion, double precio, double puntosEquivalentes, Image imagen) {
         super(nombre, descripcion, precio, puntosEquivalentes, imagen);
-        this.proteina = proteina;
+        this.tipoProteina = tipoProteina;
+        this.tipoQueso = tipoQueso;
     }
 
-    public String getProteina() {
-        return proteina;
+    public String getTipoProteina() {
+        return tipoProteina;
     }
 
-    public void setProteina(String proteina) {
-        this.proteina = proteina;
+    public void setTipoProteina(String tipoProteina) {
+        this.tipoProteina = tipoProteina;
+    }
+
+    public String getTipoQueso() {
+        return tipoQueso;
+    }
+
+    public void setTipoQueso(String tipoQueso) {
+        this.tipoQueso = tipoQueso;
     }
     
 }

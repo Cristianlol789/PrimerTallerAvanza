@@ -22,6 +22,5 @@ public class ControlQuiosco {
     public void crearQuiosco(ArrayList<Pedido> pedidos){
         Quiosco quiosco = new Quiosco(pedidos);
     }
-    
-    
+      
 }

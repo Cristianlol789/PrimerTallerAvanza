@@ -7,14 +7,14 @@ import java.awt.Image;
  * @author and
  */
 public class Papas extends Producto{
-    
-    private String terminoCoccion;
+   
     private String tipoPapa;
+    private String terminoCoccion;
 
     public Papas(String terminoCoccion, String tipoPapa, String nombre, String descripcion, double precio, double puntosEquivalentes, Image imagen) {
         super(nombre, descripcion, precio, puntosEquivalentes, imagen);
-        this.terminoCoccion = terminoCoccion;
         this.tipoPapa = tipoPapa;
+        this.terminoCoccion = terminoCoccion;
     }
 
     public String getTerminoCoccion() {
