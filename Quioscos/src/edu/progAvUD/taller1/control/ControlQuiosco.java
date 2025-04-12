@@ -12,10 +12,18 @@ public class ControlQuiosco {
 
     private ControlPrincipal controlPrincipal;
     
+    /**
+     *
+     * @param controlPrincipal
+     */
     public ControlQuiosco(ControlPrincipal controlPrincipal) {
         this.controlPrincipal = controlPrincipal;
     }
     
+    /**
+     *
+     * @param pedidos
+     */
     public void crearQuiosco(ArrayList<Pedido> pedidos){
         Quiosco quiosco = new Quiosco(pedidos);
     }

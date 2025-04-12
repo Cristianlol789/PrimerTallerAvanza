@@ -5,6 +5,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
+/**
+ *Esta clase es la encargda de gestionar los actionListeners de la ventana y ademas de decir que se hara cada vez que pase algo en la ventana, ademas se comunica constantemente con la venta y el control principal para poder mandar o recibir informacion entre ellos
+ * @author Cristianlol789
+ */
 public class ControlGrafico implements ActionListener {
 
     private VentanaPrincipal ventanaPrincipal;
@@ -12,6 +16,10 @@ public class ControlGrafico implements ActionListener {
     private Timer tiempoInactividad;
     private final int retrasoTiempoInactividad = 120000;
 
+    /**
+     *Este es el constructor, se encarga de adicionar los action listeners y de manejar el tiempo de inactividad de una persona al ejecutarse el programa
+     * @param controlPrincipal es el parametro que utilizaremos como referencia para comunicarnos con el control principal
+     */
     public ControlGrafico(ControlPrincipal controlPrincipal) {
         this.ventanaPrincipal = new VentanaPrincipal(this);
         this.controlPrincipal = controlPrincipal;
@@ -36,6 +44,10 @@ public class ControlGrafico implements ActionListener {
         tiempoInactividad.start();
     }
 
+    /**
+     *Este metodo se encarga de gestionar lo que pasa en la simulacion cuando una persona toca un boton o hace cualquier cosas en la ventana
+     * @param e hace referencia a los objetos que son tocados o utilizados por el usuario
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         tiempoInactividad.restart();

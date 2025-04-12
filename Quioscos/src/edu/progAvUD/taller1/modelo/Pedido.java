@@ -8,56 +8,122 @@ import java.util.HashMap;
  */
 public class Pedido {
 
-    private int numeroPedido;
+    private int numeroTicket;
+    private boolean estadoTicket;
     private Cliente cliente;
     private HashMap<OpcionesMenu, Integer> opcionesMenu;
     private double precioTotal;
     private String metodoDePago;
 
-    public Pedido(int numeroPedido, Cliente cliente, HashMap<OpcionesMenu, Integer> opcionesMenu, double precioTotal, String metodoDePago) {
-        this.numeroPedido = numeroPedido;
+    /**
+     *
+     * @param numeroTicket
+     * @param cliente
+     * @param opcionesMenu
+     * @param precioTotal
+     * @param metodoDePago
+     */
+    public Pedido(int numeroTicket, Cliente cliente, HashMap<OpcionesMenu, Integer> opcionesMenu, double precioTotal, String metodoDePago) {
+        this.numeroTicket = numeroTicket;
+        this.estadoTicket = false;
         this.cliente = cliente;
-        this.opcionesMenu = new HashMap<>();
+        this.opcionesMenu = opcionesMenu;
         this.precioTotal = precioTotal;
         this.metodoDePago = metodoDePago;
     }
 
-    public int getNumeroPedido() {
-        return numeroPedido;
+    /**
+     *
+     * @return
+     */
+    public int getNumeroTicket() {
+        return numeroTicket;
     }
 
-    public void setNumeroPedido(int numeroPedido) {
-        this.numeroPedido = numeroPedido;
+    /**
+     *
+     * @param numeroTicket
+     */
+    public void setNumeroTicket(int numeroTicket) {
+        this.numeroTicket = numeroTicket;
     }
 
+    /**
+     *
+     * @return
+     */
+    public boolean isEstadoTicket() {
+        return estadoTicket;
+    }
+
+    /**
+     *
+     * @param estadoTicket
+     */
+    public void setEstadoTicket(boolean estadoTicket) {
+        this.estadoTicket = estadoTicket;
+    }
+
+    /**
+     *
+     * @return
+     */
     public Cliente getCliente() {
         return cliente;
     }
 
+    /**
+     *
+     * @param cliente
+     */
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
+    /**
+     *
+     * @return
+     */
     public HashMap<OpcionesMenu, Integer> getOpcionesMenu() {
         return opcionesMenu;
     }
 
+    /**
+     *
+     * @param opcionesMenu
+     */
     public void setOpcionesMenu(HashMap<OpcionesMenu, Integer> opcionesMenu) {
         this.opcionesMenu = opcionesMenu;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getPrecioTotal() {
         return precioTotal;
     }
 
+    /**
+     *
+     * @param precioTotal
+     */
     public void setPrecioTotal(double precioTotal) {
         this.precioTotal = precioTotal;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getMetodoDePago() {
         return metodoDePago;
     }
 
+    /**
+     *
+     * @param metodoDePago
+     */
     public void setMetodoDePago(String metodoDePago) {
         this.metodoDePago = metodoDePago;
     }
