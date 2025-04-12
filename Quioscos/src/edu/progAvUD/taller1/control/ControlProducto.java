@@ -10,7 +10,7 @@ import edu.progAvUD.taller1.modelo.Strips;
 import edu.progAvUD.taller1.modelo.Wrap;
 
 /**
- *
+ *Esta clase se encarga de crear cada producto individualmente y devolverlo para poder crear las opciones de menu
  * @author Cristianlol789
  */
 public class ControlProducto {
@@ -18,8 +18,8 @@ public class ControlProducto {
     private ControlPrincipal controlPrincipal;
 
     /**
-     *
-     * @param controlPrincipal
+     *Este constructor se encarga de crear al control
+     * @param controlPrincipal variable para poderse comunicar con el control
      */
     public ControlProducto(ControlPrincipal controlPrincipal) {
         this.controlPrincipal = controlPrincipal;
@@ -27,14 +27,14 @@ public class ControlProducto {
     
     /**
      *
-     * @param tipo
-     * @param coccion
-     * @param nombre
-     * @param descripcion
-     * @param precio
-     * @param puntosEquivalentes
-     * @param identificador
-     * @return
+     * @param tipo especifica la clasificacion de cada producto
+     * @param coccion especifica el sabor o tipo de coccion deseado
+     * @param nombre dice el nombre del producto comprado
+     * @param descripcion dice que lleva o como esta compuesto
+     * @param precio el valor total a pagar por este
+     * @param puntosEquivalentes el valor en puntos del producto
+     * @param identificador el tipo de producto que se desea crear
+     * @return devuelve el producto comprado
      */
     public Producto crearProducto(String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador){
         switch(identificador){

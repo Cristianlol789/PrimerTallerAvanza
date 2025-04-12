@@ -47,6 +47,6 @@ public class ControlPedido {
         pedidos.add(pedido);
         controlPrincipal.getControlOpcionesMenu().vaciarHashMap();
         controlPrincipal.getControlOpcionesMenu().vaciarPrecio();
-        controlPrincipal.getControlQuiosco().crearQuiosco(pedidos);
+        controlPrincipal.getControlQuiosco().cambiarListaPedidos(pedidos);
     }
 }

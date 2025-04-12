@@ -8,21 +8,21 @@ package edu.progAvUD.taller1.modelo;
 public class Hamburguesa extends Producto{
     
     private String tipoPan;
-    private String tipoCarne;
+    private String tipoProteina;
 
     /**
      *
      * @param tipoPan
-     * @param tipoCarne
+     * @param tipoProteina
      * @param nombre
      * @param descripcion
      * @param precio
      * @param puntosEquivalentes
      */
-    public Hamburguesa(String tipoPan, String tipoCarne, String nombre, String descripcion, double precio, double puntosEquivalentes) {
+    public Hamburguesa(String tipoPan, String tipoProteina, String nombre, String descripcion, double precio, double puntosEquivalentes) {
         super(nombre, descripcion, precio, puntosEquivalentes);
         this.tipoPan = tipoPan;
-        this.tipoCarne = tipoCarne;
+        this.tipoProteina = tipoProteina;
     }
 
     /**
@@ -45,16 +45,16 @@ public class Hamburguesa extends Producto{
      *
      * @return
      */
-    public String getTipoCarne() {
-        return tipoCarne;
+    public String getTipoProteina() {
+        return tipoProteina;
     }
 
     /**
      *
-     * @param tipoCarne
+     * @param tipoProteina
      */
-    public void setTipoCarne(String tipoCarne) {
-        this.tipoCarne = tipoCarne;
+    public void setTipoProteina(String tipoProteina) {
+        this.tipoProteina = tipoProteina;
     }
     
 }
