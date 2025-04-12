@@ -4,6 +4,8 @@
  */
 package edu.progAvUD.taller1.vista;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Andres Felipe
@@ -16,7 +18,14 @@ public class PanelPagar extends javax.swing.JPanel {
     public PanelPagar() {
         initComponents();
     }
-
+    
+    public void CargarDatosPedido(Object[][] datosProductos){
+        modeloTablaProductos.setRowCount(0); // Limpia las filas anteriores
+        for (Object[] fila : datosProductos) {
+            modeloTablaProductos.addRow(fila); // Agrega la fila a la tabla
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,17 +46,13 @@ public class PanelPagar extends javax.swing.JPanel {
         jTextFieldTotalPagar = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
-        jTablePedido.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        modeloTablaProductos = new DefaultTableModel(new Object[]{"Producto", "Cantidad", "Precio Unidad", "Precio Total"}, 0) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
             }
-        ));
+        };
+        jTablePedido.setModel(modeloTablaProductos);
         jScrollPane1.setViewportView(jTablePedido);
 
         jButtonIrAPagar.setText("Ir a pagar");
@@ -59,6 +64,8 @@ public class PanelPagar extends javax.swing.JPanel {
         jLabel3.setText("Asi va tu pedido:");
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jTextFieldTotalPagar.setEditable(false);
 
         jLabel4.setText("Total a pagar:");
 
@@ -132,7 +139,8 @@ public class PanelPagar extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTablePedido;
+    private DefaultTableModel modeloTablaProductos;
+    public javax.swing.JTable jTablePedido;
     public javax.swing.JTextField jTextFieldCedula;
     public javax.swing.JTextField jTextFieldTotalPagar;
     // End of variables declaration//GEN-END:variables
