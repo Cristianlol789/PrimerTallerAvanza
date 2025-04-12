@@ -79,11 +79,11 @@ public class ControlPrincipal {
      * @param cantidadMenuComprado la cantidad de compra iguales a esta que hizo
      * la persona
      */
-    public void crearBucket(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, int cantidadPresas, int cantidadMenuComprado) {
+    public void crearBucket(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, int cantidadPresasAla, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, int cantidadPresasPierna, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, int cantidadPresasCuadro, String tipo3, String coccion3, String nombre3, String descripcion3, double precio3, double puntosEquivalentes3, int cantidadPresasPechuga, int cantidadMenuComprado) {
         String identificicadorMenu = "Bucket";
         HashMap<String, Boolean> agrandados = new HashMap<>();
         ArrayList<String> adiciones = new ArrayList<>();
-        controlOpcionesMenu.crearMenu(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificicadorMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificicadorMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificicadorMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificicadorMenu, agrandados, adiciones, identificicadorMenu, cantidadPresas, cantidadMenuComprado);
+        controlOpcionesMenu.crearMenu(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador, tipo3, coccion3, nombre3, descripcion3, precio3, puntosEquivalentes3, identificador, agrandados, adiciones, identificicadorMenu, cantidadPresasAla, cantidadMenuComprado, cantidadPresasPierna, cantidadPresasCuadro, cantidadPresasPechuga);
     }
 
     /**
@@ -127,7 +127,7 @@ public class ControlPrincipal {
      */
     public void crearCombo(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, String identificador1, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, String identificador2, String tipo3, String coccion3, String nombre3, String descripcion3, double precio3, double puntosEquivalentes3, String identificador3, HashMap<String, Boolean> agrandados, ArrayList<String> adiciones, int cantidadMenuComprado) {
         String identificadorMenu = "Combo";
-        controlOpcionesMenu.crearMenu(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, tipo3, coccion3, nombre3, descripcion3, precio3, puntosEquivalentes3, identificador3, agrandados, adiciones, identificadorMenu, 0, cantidadMenuComprado);
+        controlOpcionesMenu.crearMenu(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, tipo3, coccion3, nombre3, descripcion3, precio3, puntosEquivalentes3, identificador3, agrandados, adiciones, identificadorMenu, 0, cantidadMenuComprado, 0, 0, 0);
     }
 
     /**
@@ -164,7 +164,7 @@ public class ControlPrincipal {
         String identificadorMenu = "ParaCompartir3";
         HashMap<String, Boolean> agrandados = new HashMap<>();
         ArrayList<String> adiciones = new ArrayList<>();
-        controlOpcionesMenu.crearMenu(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, agrandados, adiciones, identificadorMenu, 0, cantidadMenuComprado);
+        controlOpcionesMenu.crearMenu(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, agrandados, adiciones, identificadorMenu, 0, cantidadMenuComprado, 0, 0, 0);
     }
 
     /**
@@ -208,7 +208,7 @@ public class ControlPrincipal {
         String identificadorMenu = "ParaCompartir4";
         HashMap<String, Boolean> agrandados = new HashMap<>();
         ArrayList<String> adiciones = new ArrayList<>();
-        controlOpcionesMenu.crearMenu(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, tipo3, coccion3, nombre3, descripcion3, precio3, puntosEquivalentes3, identificador3, agrandados, adiciones, identificadorMenu, 0, cantidadMenuComprado);
+        controlOpcionesMenu.crearMenu(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, tipo3, coccion3, nombre3, descripcion3, precio3, puntosEquivalentes3, identificador3, agrandados, adiciones, identificadorMenu, 0, cantidadMenuComprado, 0, 0, 0);
     }
 
     /**
@@ -231,7 +231,7 @@ public class ControlPrincipal {
         String identificadorMenu = "Unidad";
         HashMap<String, Boolean> agrandados = new HashMap<>();
         ArrayList<String> adiciones = new ArrayList<>();
-        controlOpcionesMenu.crearMenu(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, agrandados, adiciones, identificadorMenu, cantidadMenuComprado, cantidadMenuComprado);
+        controlOpcionesMenu.crearMenu(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, agrandados, adiciones, identificadorMenu, cantidadMenuComprado, cantidadMenuComprado, 0, 0, 0);
     }
 
     /**

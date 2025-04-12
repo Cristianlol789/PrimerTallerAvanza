@@ -82,17 +82,22 @@ public class ControlOpcionesMenu {
      * Combo).
      * @param identificadorMenu Identificador que determina el tipo de menú a
      * crear ("Bucket", "Combo", "ParaCompartir3", "ParaCompartir4" o "Unidad").
-     * @param cantidadPresas Cantidad de presas (usado en el menú Bucket).
      * @param cantidadMenuComprado Cantidad de veces que se ha adquirido este
      * menú.
      */
-    public void crearMenu(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, String identificador1, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, String identificador2, String tipo3, String coccion3, String nombre3, String descripcion3, double precio3, double puntosEquivalentes3, String identificador3, HashMap<String, Boolean> agrandados, ArrayList<String> adiciones, String identificadorMenu, int cantidadPresas, int cantidadMenuComprado) {
+    public void crearMenu(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, String identificador1, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, String identificador2, String tipo3, String coccion3, String nombre3, String descripcion3, double precio3, double puntosEquivalentes3, String identificador3, HashMap<String, Boolean> agrandados, ArrayList<String> adiciones, String identificadorMenu, int cantidadPresasAla, int cantidadMenuComprado, int cantidadPresasPierna, int cantidadPresasCuadro, int cantidadPresasPechuga) {
         ControlProducto controlProducto = controlprincipal.getControlProductos();
         switch (identificadorMenu) {
             case "Bucket":
                 HashMap presas = new HashMap<>();
-                Producto presa1 = controlprincipal.getControlProductos().crearProducto(tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador);
-                presas.put(presa1, cantidadPresas);
+                Producto presaAla = controlprincipal.getControlProductos().crearProducto(tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador);
+                Producto presaPierna = controlprincipal.getControlProductos().crearProducto(tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador);
+                Producto presaCuadro = controlprincipal.getControlProductos().crearProducto(tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador);
+                Producto presaPechuga = controlprincipal.getControlProductos().crearProducto(tipo3, coccion3, nombre3, descripcion3, precio3, puntosEquivalentes3, identificador);
+                presas.put(presaAla, cantidadPresasAla);
+                presas.put(presaPierna, cantidadPresasPierna);
+                presas.put(presaCuadro, cantidadPresasCuadro);
+                presas.put(presaPechuga, cantidadPresasPechuga);
                 OpcionesMenu bucket = new Bucket(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, presas);
                 this.opcionesMenu.put(bucket, cantidadMenuComprado);
                 this.precioTotalPedido += precioTotalMenu;
