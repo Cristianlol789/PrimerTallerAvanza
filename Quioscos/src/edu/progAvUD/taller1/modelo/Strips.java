@@ -9,12 +9,12 @@ import java.awt.Image;
 public class Strips extends Producto{
     
     private String especie;
-    private String tipoTostado;
+    private String tipoCoccion;
 
-    public Strips(String especie, String tipoTostado, String nombre, String descripcion, double precio, double puntosEquivalentes, Image imagen) {
+    public Strips(String especie, String tipoCoccion, String nombre, String descripcion, double precio, double puntosEquivalentes, Image imagen) {
         super(nombre, descripcion, precio, puntosEquivalentes, imagen);
         this.especie = especie;
-        this.tipoTostado = tipoTostado;
+        this.tipoCoccion = tipoCoccion;
     }
 
     public String getEspecie() {
@@ -25,12 +25,12 @@ public class Strips extends Producto{
         this.especie = especie;
     }
 
-    public String getTipoTostado() {
-        return tipoTostado;
+    public String getTipoCoccion() {
+        return tipoCoccion;
     }
 
-    public void setTipoTostado(String tipoTostado) {
-        this.tipoTostado = tipoTostado;
+    public void setTipoCoccion(String tipoTostado) {
+        this.tipoCoccion = tipoTostado;
     }
     
 }

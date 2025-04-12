@@ -5,12 +5,12 @@ import java.awt.Image;
 public class Nugget extends Producto{
     
     private String tipoNugget;
-    private String terminoCoccion;
+    private String tipoCoccion;
 
-    public Nugget(String tipoNugget, String terminoCoccion, String nombre, String descripcion, double precio, double puntosEquivalentes, Image imagen) {
+    public Nugget(String tipoNugget, String tipoCoccion, String nombre, String descripcion, double precio, double puntosEquivalentes, Image imagen) {
         super(nombre, descripcion, precio, puntosEquivalentes, imagen);
         this.tipoNugget = tipoNugget;
-        this.terminoCoccion = terminoCoccion;
+        this.tipoCoccion = tipoCoccion;
     }
 
     public String getTipoNugget() {
@@ -21,12 +21,12 @@ public class Nugget extends Producto{
         this.tipoNugget = tipoNugget;
     }
 
-    public String getTerminoCoccion() {
-        return terminoCoccion;
+    public String getTipoCoccion() {
+        return tipoCoccion;
     }
 
-    public void setTerminoCoccion(String terminoCoccion) {
-        this.terminoCoccion = terminoCoccion;
+    public void setTipoCoccion(String terminoCoccion) {
+        this.tipoCoccion = terminoCoccion;
     }
     
 }

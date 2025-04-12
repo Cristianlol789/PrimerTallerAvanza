@@ -6,9 +6,6 @@ public class Quiosco {
     
     private ArrayList<Pedido> pedidos;
     private static final int inactividadMaximaSegundos = 120 ;
-
-    public Quiosco() {
-    }
     
     public Quiosco(ArrayList<Pedido> pedidos) {
         this.pedidos = pedidos;

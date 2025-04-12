@@ -11,12 +11,9 @@ import java.util.ArrayList;
 public class ControlQuiosco {
 
     private ControlPrincipal controlPrincipal;
-    private ArrayList<Pedido> pedidos;
     
     public ControlQuiosco(ControlPrincipal controlPrincipal) {
         this.controlPrincipal = controlPrincipal;
-        this.pedidos = new ArrayList<>();
-        crearQuiosco(pedidos);
     }
     
     public void crearQuiosco(ArrayList<Pedido> pedidos){
