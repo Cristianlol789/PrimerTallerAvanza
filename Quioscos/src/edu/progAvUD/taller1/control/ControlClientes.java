@@ -32,7 +32,7 @@ public class ControlClientes {
 
     public void crearTresClientesPredeterminados() {
         // Cliente 1: Con cultura definida
-        Cliente cliente1 = new Cliente(10123456, "Roberto García", 45, "Zenú", 10000);
+        Cliente cliente1 = new Cliente(10123456, "Roberto García", 45, "Zenú", 30000);
 
         // Cliente 2: Sin cultura definida (usando el constructor sin parámetro de cultura)
         Cliente cliente2 = new Cliente(20234567, "María López", 32, 0);
@@ -216,7 +216,7 @@ public class ControlClientes {
                     return "No se puede realizar la transaccion por falta de puntos";
                 } else {
                     double totalPuntos = cliente.getPuntos() - puntosEquivalentes;
-                    String info = "Se realizo la compra con puntos, usted tenia " + cliente.getPuntos() + " ahora tiene un total de " + totalPuntos + "ademas su ticket ya se encuentra activo";
+                    String info = "Se realizo la compra con puntos, usted tenia " + cliente.getPuntos() + " ahora tiene un total de " + totalPuntos + " ademas su ticket ya se encuentra activo";
                     cliente.setPuntos(totalPuntos);
                     return info;
                 }

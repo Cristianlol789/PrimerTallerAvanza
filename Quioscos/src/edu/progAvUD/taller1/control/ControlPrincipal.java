@@ -46,9 +46,10 @@ public class ControlPrincipal {
      * @param puntosEquivalentes Puntos equivalentes asociados al cliente
      * @param metodoDePago forma en la que el cliente desidio pagar
      */
-    public void inicioSesionCliente(double cedula, double puntosEquivalentes, String metodoDePago) {
-        controlClientes.buscarCliente(cedula, puntosEquivalentes);
+    public String inicioSesionCliente(double cedula, double puntosEquivalentes, String metodoDePago) {
+        String info = controlClientes.buscarCliente(cedula, puntosEquivalentes);
         crearPedido(cedula, metodoDePago);
+        return info;
     }
 
     /**
@@ -59,6 +60,12 @@ public class ControlPrincipal {
      */
     public void crearPedido(double cedula, String metodoDePago) {
         controlPedido.crearPedido(cedula, metodoDePago);
+    }
+    
+    public String pagoPuntos(double cedula, double puntosEquivalentes, String metodoDePago){
+        String info = controlClientes.pagarPuntos(cedula, puntosEquivalentes);
+        crearPedido(cedula, metodoDePago);
+        return info;
     }
 
     /**
