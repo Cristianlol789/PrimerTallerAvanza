@@ -1,6 +1,5 @@
 package edu.progAvUD.taller1.control;
 
-import edu.progAvUD.taller1.control.ControlPrincipal;
 import edu.progAvUD.taller1.modelo.Cliente;
 import edu.progAvUD.taller1.modelo.OpcionesMenu;
 import edu.progAvUD.taller1.modelo.Pedido;

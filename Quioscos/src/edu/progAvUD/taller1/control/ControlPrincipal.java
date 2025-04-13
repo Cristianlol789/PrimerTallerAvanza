@@ -360,11 +360,5 @@ public class ControlPrincipal {
         this.controlProductos = controlProductos;
     }
     
-    /**
-     *
-     * @return
-     */
-    public Object[][] enviarDatosTablaPedido(){
-        return controlOpcionesMenu.enviarDatosTablaPedido();
-    }
+
 }

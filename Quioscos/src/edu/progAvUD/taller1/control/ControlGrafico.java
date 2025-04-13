@@ -57,20 +57,18 @@ public class ControlGrafico implements ActionListener {
         ventanaPrincipal.panelParaCompartir.jButtonAgragarPedidoCompartir.addActionListener(this);
         ventanaPrincipal.panelOtrosProductos.jButtonAgragarPedidoProducto.addActionListener(this);
 
-        ActionListener actionListener = e -> actualizarPrecioTotalCombo();
-
-        ventanaPrincipal.panelCombos.jComboBoxAgrandadoGaseosa.addActionListener(actionListener);
-        ventanaPrincipal.panelCombos.jComboBoxAgrandadoPapas.addActionListener(actionListener);
-        
         ventanaPrincipal.panelPagar.jButtonIrAPagar.addActionListener(this);
 
         actualizarPrecioTotalBucket();
         actualizarPrecioTotalCombo();
+        actualizarBebidaPanelOtrosProductos();
 
         tiempoInactividad = new Timer(retrasoTiempoInactividad, new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {   
+                ventanaPrincipal.mostrarMensajeExito("La seccion ha terminado debido a la inactividad ");
                 ventanaPrincipal.mostrarPanel(ventanaPrincipal.panelInicial);
+                ventanaPrincipal.panelInicial.setVisible(true);
                 ventanaPrincipal.jMenuBar1.setVisible(false);
             }
         });
@@ -92,9 +90,9 @@ public class ControlGrafico implements ActionListener {
         if (e.getSource() == ventanaPrincipal.panelInicial.jButtonSiguiente) {
             if (ventanaPrincipal.panelInicial.jRadioButtonComerAqui.isSelected()) {
                 ventanaPrincipal.jMenuBar1.setVisible(true);
-                ventanaPrincipal.getContentPane().removeAll();
-                ventanaPrincipal.repaint();
-                ventanaPrincipal.revalidate();
+                
+                ventanaPrincipal.panelInicial.setVisible(false);
+                
                 ventanaPrincipal.jMenuPagar.setVisible(false);
             } else if (ventanaPrincipal.panelInicial.jRadioButtonLlevar.isSelected()) {
                 ventanaPrincipal.mostrarMensajeError("Seccion en desarrollo. Gracias por su paciencia");
@@ -112,7 +110,8 @@ public class ControlGrafico implements ActionListener {
         }
         if (e.getSource() == ventanaPrincipal.jMenuItemPagar) {
             ventanaPrincipal.mostrarPanel(ventanaPrincipal.panelPagar);
-            ventanaPrincipal.panelPagar.CargarDatosPedido(controlPrincipal.enviarDatosTablaPedido());
+            ventanaPrincipal.panelPagar.CargarDatosPedido(controlPrincipal.getControlOpcionesMenu().enviarDatosTablaPedido());
+            ventanaPrincipal.panelPagar.jTextFieldTotalPagar.setText("$ " + controlPrincipal.getControlOpcionesMenu().getPrecioTotalPedido());
         }
         if (e.getSource() == ventanaPrincipal.jMenuItemParaCompartir) {
             ventanaPrincipal.mostrarPanel(ventanaPrincipal.panelParaCompartir);
@@ -135,7 +134,7 @@ public class ControlGrafico implements ActionListener {
             cargarUnidad();
             ventanaPrincipal.panelOtrosProductos.limpiarCampos();
         }
-        if (e.getSource()== ventanaPrincipal.panelPagar.jButtonIrAPagar){
+        if (e.getSource() == ventanaPrincipal.panelPagar.jButtonIrAPagar) {
             String cedula = ventanaPrincipal.panelPagar.jTextFieldCedula.getText();
             validarDescuento(cedula);
             validarPago(cedula);
@@ -442,6 +441,18 @@ public class ControlGrafico implements ActionListener {
             if (unidadesAla != 0) {
                 controlPrincipal.crearUnidad("Ala de Pollo", preciosPaneles.get("Ala"), preciosPaneles.get("Ala"), "Ala de Pollo", coccionAla, "Ala de pollo", "Ala de pollo apanada al estilo FormFood", preciosPaneles.get("Ala"), preciosPaneles.get("Ala"), "PresaPollo", unidadesAla);
             }
+            if (unidadesPechuga != 0) {
+                controlPrincipal.crearUnidad("Pechuga de Pollo", preciosPaneles.get("Pechuga"), preciosPaneles.get("Pechuga"), "Pechuga de Pollo", coccionPierna, "Pechuga de pollo", "Pechuga de pollo apanada al estilo FormFood", preciosPaneles.get("Pechuga"), preciosPaneles.get("Pechuga"), "PresaPollo", unidadesPechuga);
+            }
+            if (unidadesPierna != 0) {
+                controlPrincipal.crearUnidad("Pierna", preciosPaneles.get("Pierna"), preciosPaneles.get("Pierna"), "Pierna de Pollo", coccionPechuga, "Pierna de pollo", "Pierna de pollo apanada al estilo FormFood", preciosPaneles.get("Pierna"), preciosPaneles.get("Pierna"), "PresaPollo", unidadesPierna);
+            }
+            if (unidadesStrips != 0) {
+                controlPrincipal.crearUnidad("Strips", preciosPaneles.get("Strips"), preciosPaneles.get("Strips"), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxEspecieStrips.getSelectedItem(), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxCoccionStrips.getSelectedItem(), "Strips", "Unos strips para acompañar tu combo", preciosPaneles.get("Strips"), preciosPaneles.get("Strips"), "Strips", unidadesStrips);
+            }
+            if (unidadesWraps != 0) {
+                controlPrincipal.crearUnidad("Wraps", preciosPaneles.get("Wraps"), preciosPaneles.get("Wraps"), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxProteinaWraps.getSelectedItem(), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxQuesoWraps.getSelectedItem(), "Wraps", "Los mejores wraps al estilo FormFood", preciosPaneles.get("Wraps"), preciosPaneles.get("Wraps"), "Wrap", unidadesWraps);
+            }
             if (unidadesBebida != 0) {
                 if (tipoBebida.equalsIgnoreCase("Gaseosa")) {
                     controlPrincipal.crearUnidad("Bebida", preciosPaneles.get("Bebida"), preciosPaneles.get("Bebida"), "Gaseosa", (String) ventanaPrincipal.panelOtrosProductos.jComboBoxSaborGaseosa.getSelectedItem(), "Gaseosa", "Una bebida para acompañar", preciosPaneles.get("Bebida"), preciosPaneles.get("Bebida"), "Bebida", unidadesBebida);
@@ -464,66 +475,41 @@ public class ControlGrafico implements ActionListener {
             }
             if (unidadesPapas != 0) {
                 controlPrincipal.crearUnidad("Papas", preciosPaneles.get("Papas"), preciosPaneles.get("Papas"), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxTipoPapas.getSelectedItem(), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxCoccionPapas.getSelectedItem(), "Papas", "Unas papas para acompañar tu combo", preciosPaneles.get("Papas"), preciosPaneles.get("Papas"), "Papas", unidadesPapas);
-                if (unidadesPechuga != 0) {
-                    controlPrincipal.crearUnidad("Pechuga de Pollo", preciosPaneles.get("Pechuga"), preciosPaneles.get("Pechuga"), "Pechuga de Pollo", coccionPierna, "Pechuga de pollo", "Pechuga de pollo apanada al estilo FormFood", preciosPaneles.get("Pechuga"), preciosPaneles.get("Pechuga"), "PresaPollo", unidadesPechuga);
-                }
-                if (unidadesPierna != 0) {
-                    controlPrincipal.crearUnidad("Pierna", preciosPaneles.get("Pierna"), preciosPaneles.get("Pierna"), "Pierna de Pollo", coccionPechuga, "Pierna de pollo", "Pierna de pollo apanada al estilo FormFood", preciosPaneles.get("Pierna"), preciosPaneles.get("Pierna"), "PresaPollo", unidadesPierna);
-                }
-                if (unidadesStrips != 0) {
-                    controlPrincipal.crearUnidad("Strips", preciosPaneles.get("Strips"), preciosPaneles.get("Strips"), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxEspecieStrips.getSelectedItem(), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxCoccionStrips.getSelectedItem(), "Strips", "Unos strips para acompañar tu combo", preciosPaneles.get("Strips"), preciosPaneles.get("Strips"), "Strips", unidadesStrips);
-                }
-                if (unidadesWraps != 0) {
-                    controlPrincipal.crearUnidad("Wraps", preciosPaneles.get("Wraps"), preciosPaneles.get("Wraps"), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxProteinaWraps.getSelectedItem(), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxQuesoWraps.getSelectedItem(), "Wraps", "Los mejores wraps al estilo FormFood", preciosPaneles.get("Wraps"), preciosPaneles.get("Wraps"), "Wrap", unidadesWraps);
-                }
-                ventanaPrincipal.mostrarMensajeExito("Se ha añadido correctamente el o los productos pedidos");
-                ventanaPrincipal.jMenuPagar.setVisible(true);
             }
+            ventanaPrincipal.mostrarMensajeExito("Se ha añadido correctamente el o los productos pedidos");
+            ventanaPrincipal.jMenuPagar.setVisible(true);
         }
     }
 
     /**
-     * Se encarga de ir actualizando el precio del combo
+     * Se encarga de calcular el precio del combo
      */
-    public void actualizarPrecioTotalComboChangeListener() {
-        //Método para actualizar el texto del JTextField de PrecioTotal del Combo
-        ChangeListener listenerToltalCombo = new ChangeListener() {
-            public void stateChanged(ChangeEvent e) {
-                actualizarPrecioTotalCombo();
-            }
-        };
-
-        ventanaPrincipal.panelCombos.jRadioButtonHamburguesa.addChangeListener(listenerToltalCombo);
-        ventanaPrincipal.panelCombos.jRadioButtonNuggets.addChangeListener(listenerToltalCombo);
-        ventanaPrincipal.panelCombos.jRadioButtonPresa.addChangeListener(listenerToltalCombo);
-        ventanaPrincipal.panelCombos.jRadioButtonWraps.addChangeListener(listenerToltalCombo);
-
-        ventanaPrincipal.panelCombos.jCheckBoxArrozAdicion.addChangeListener(listenerToltalCombo);
-        ventanaPrincipal.panelCombos.jCheckBoxChipsAdicion.addChangeListener(listenerToltalCombo);
-        ventanaPrincipal.panelCombos.jCheckBoxJalapeñosAdicion.addChangeListener(listenerToltalCombo);
-        ventanaPrincipal.panelCombos.jCheckBoxQuesoAdicion.addChangeListener(listenerToltalCombo);
-        ventanaPrincipal.panelCombos.jCheckBoxSalsaBbqAdicion.addChangeListener(listenerToltalCombo);
-        ventanaPrincipal.panelCombos.jCheckBoxSalsaPicanteAdicion.addChangeListener(listenerToltalCombo);
-        ventanaPrincipal.panelCombos.jCheckBoxSourCreamAdicion.addChangeListener(listenerToltalCombo);
-        ventanaPrincipal.panelCombos.jCheckBoxTocinoAdicion.addChangeListener(listenerToltalCombo);
-    }
-
-    /**
-     * Se encarga de actualizar el precio del combo
-     */
-    public void actualizarPrecioTotalCombo() {
-        int cantidadAdiciones = (int) Arrays.asList(
-                ventanaPrincipal.panelCombos.jCheckBoxQuesoAdicion,
-                ventanaPrincipal.panelCombos.jCheckBoxSalsaPicanteAdicion,
-                ventanaPrincipal.panelCombos.jCheckBoxChipsAdicion,
-                ventanaPrincipal.panelCombos.jCheckBoxArrozAdicion,
-                ventanaPrincipal.panelCombos.jCheckBoxTocinoAdicion,
-                ventanaPrincipal.panelCombos.jCheckBoxJalapeñosAdicion,
-                ventanaPrincipal.panelCombos.jCheckBoxSalsaBbqAdicion,
-                ventanaPrincipal.panelCombos.jCheckBoxSourCreamAdicion
-        ).stream()
-                .filter(JCheckBox::isSelected)
-                .count();
+    private void calcularPrecioCombo() {
+        int cantidadAdiciones = 0;
+        if (ventanaPrincipal.panelCombos.jCheckBoxQuesoAdicion.isSelected()) {
+            cantidadAdiciones++;
+        }
+        if (ventanaPrincipal.panelCombos.jCheckBoxSalsaPicanteAdicion.isSelected()) {
+            cantidadAdiciones++;
+        }
+        if (ventanaPrincipal.panelCombos.jCheckBoxChipsAdicion.isSelected()) {
+            cantidadAdiciones++;
+        }
+        if (ventanaPrincipal.panelCombos.jCheckBoxArrozAdicion.isSelected()) {
+            cantidadAdiciones++;
+        }
+        if (ventanaPrincipal.panelCombos.jCheckBoxTocinoAdicion.isSelected()) {
+            cantidadAdiciones++;
+        }
+        if (ventanaPrincipal.panelCombos.jCheckBoxJalapeñosAdicion.isSelected()) {
+            cantidadAdiciones++;
+        }
+        if (ventanaPrincipal.panelCombos.jCheckBoxSalsaBbqAdicion.isSelected()) {
+            cantidadAdiciones++;
+        }
+        if (ventanaPrincipal.panelCombos.jCheckBoxSourCreamAdicion.isSelected()) {
+            cantidadAdiciones++;
+        }
 
         int cantidadAgrandados = 0;
         if (!"No".equals(ventanaPrincipal.panelCombos.jComboBoxAgrandadoGaseosa.getSelectedItem())) {
@@ -533,23 +519,91 @@ public class ControlGrafico implements ActionListener {
             cantidadAgrandados++;
         }
 
-        double TotalCombo = preciosPaneles.get("Bebida")
-                + preciosPaneles.get("Papas")
-                + preciosPaneles.get("Strips")
-                + (5000 * cantidadAdiciones)
-                + (2000 * cantidadAgrandados);
+        double total = preciosPaneles.get("Bebida") + preciosPaneles.get("Papas") + preciosPaneles.get("Strips");
+        total += cantidadAdiciones * 5000;
+        total += cantidadAgrandados * 2000;
 
         if (ventanaPrincipal.panelCombos.jRadioButtonPresa.isSelected()) {
-            TotalCombo += preciosPaneles.get("Presa");
+            total += preciosPaneles.get("Presa");
         } else if (ventanaPrincipal.panelCombos.jRadioButtonNuggets.isSelected()) {
-            TotalCombo += preciosPaneles.get("Nuggets");
+            total += preciosPaneles.get("Nuggets");
         } else if (ventanaPrincipal.panelCombos.jRadioButtonHamburguesa.isSelected()) {
-            TotalCombo += preciosPaneles.get("Hamburguesa");
+            total += preciosPaneles.get("Hamburguesa");
         } else if (ventanaPrincipal.panelCombos.jRadioButtonWraps.isSelected()) {
-            TotalCombo += preciosPaneles.get("Wraps");
+            total += preciosPaneles.get("Wraps");
         }
 
-        ventanaPrincipal.panelCombos.jTextFieldPrecioTotalCombo.setText("$ " + TotalCombo);
+        ventanaPrincipal.panelCombos.jTextFieldPrecioTotalCombo.setText("$ " + total);
+    }
+
+    /**
+     * Se encarga de actualizar el precio del combo
+     */
+    public void actualizarPrecioTotalCombo() {
+        ChangeListener listener = new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                calcularPrecioCombo();
+            }
+        };
+
+        ActionListener comboBoxListenerCombo = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcularPrecioCombo();
+            }
+        };
+
+        // Añadir ChangeListeners a los RadioButtons y CheckBoxes
+        ventanaPrincipal.panelCombos.jRadioButtonHamburguesa.addChangeListener(listener);
+        ventanaPrincipal.panelCombos.jRadioButtonNuggets.addChangeListener(listener);
+        ventanaPrincipal.panelCombos.jRadioButtonPresa.addChangeListener(listener);
+        ventanaPrincipal.panelCombos.jRadioButtonWraps.addChangeListener(listener);
+
+        ventanaPrincipal.panelCombos.jCheckBoxArrozAdicion.addChangeListener(listener);
+        ventanaPrincipal.panelCombos.jCheckBoxChipsAdicion.addChangeListener(listener);
+        ventanaPrincipal.panelCombos.jCheckBoxJalapeñosAdicion.addChangeListener(listener);
+        ventanaPrincipal.panelCombos.jCheckBoxQuesoAdicion.addChangeListener(listener);
+        ventanaPrincipal.panelCombos.jCheckBoxSalsaBbqAdicion.addChangeListener(listener);
+        ventanaPrincipal.panelCombos.jCheckBoxSalsaPicanteAdicion.addChangeListener(listener);
+        ventanaPrincipal.panelCombos.jCheckBoxSourCreamAdicion.addChangeListener(listener);
+        ventanaPrincipal.panelCombos.jCheckBoxTocinoAdicion.addChangeListener(listener);
+
+        // Los JComboBox necesitan ActionListener
+        ventanaPrincipal.panelCombos.jComboBoxAgrandadoGaseosa.addActionListener(comboBoxListenerCombo);
+        ventanaPrincipal.panelCombos.jComboBoxAgrandadoPapas.addActionListener(comboBoxListenerCombo);
+    }
+
+    public void actualizarBebidaPanelOtrosProductos() {
+        ventanaPrincipal.panelOtrosProductos.jLabelSaborJugo.setVisible(true);
+        ventanaPrincipal.panelOtrosProductos.jComboBoxSaborJugo.setVisible(true);
+        ventanaPrincipal.panelOtrosProductos.jLabelSaborGaseosa.setVisible(false);
+        ventanaPrincipal.panelOtrosProductos.jComboBoxSaborGaseosa.setVisible(false);   
+
+        ActionListener comboBoxListenerOtrosProductos = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String tipoBebida = (String) ventanaPrincipal.panelOtrosProductos.jComboBoxTipoBebida.getSelectedItem();
+                if ("Jugo".equals(tipoBebida)) {
+                    ventanaPrincipal.panelOtrosProductos.jLabelSaborJugo.setVisible(true);
+                    ventanaPrincipal.panelOtrosProductos.jComboBoxSaborJugo.setVisible(true);
+                    ventanaPrincipal.panelOtrosProductos.jLabelSaborGaseosa.setVisible(false);
+                    ventanaPrincipal.panelOtrosProductos.jComboBoxSaborGaseosa.setVisible(false);
+                } else if ("Gaseosa".equals(tipoBebida)) {
+                    ventanaPrincipal.panelOtrosProductos.jLabelSaborJugo.setVisible(false);
+                    ventanaPrincipal.panelOtrosProductos.jComboBoxSaborJugo.setVisible(false);
+                    ventanaPrincipal.panelOtrosProductos.jLabelSaborGaseosa.setVisible(true);
+                    ventanaPrincipal.panelOtrosProductos.jComboBoxSaborGaseosa.setVisible(true);
+                } else if ("Agua".equals(tipoBebida)) {
+                    ventanaPrincipal.panelOtrosProductos.jLabelSaborJugo.setVisible(false);
+                    ventanaPrincipal.panelOtrosProductos.jComboBoxSaborJugo.setVisible(false);
+                    ventanaPrincipal.panelOtrosProductos.jLabelSaborGaseosa.setVisible(false);
+                    ventanaPrincipal.panelOtrosProductos.jComboBoxSaborGaseosa.setVisible(false);
+                }
+            }
+        };
+
+        ventanaPrincipal.panelOtrosProductos.jComboBoxTipoBebida.addActionListener(comboBoxListenerOtrosProductos);
     }
 
     /**
@@ -625,6 +679,5 @@ public class ControlGrafico implements ActionListener {
         }
 
     }
-    
 
 }

@@ -106,27 +106,27 @@ public class ControlOpcionesMenu {
                 presas.put(presaPechuga, cantidadPresasPechuga);
                 OpcionesMenu bucket = new Bucket(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, presas);
                 this.opcionesMenu.put(bucket, cantidadMenuComprado);
-                this.precioTotalPedido += precioTotalMenu;
+                this.precioTotalPedido += precioTotalMenu * cantidadMenuComprado;
                 break;
             case "Combo":
                 OpcionesMenu combo = new Combo(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, tipo3, coccion3, nombre3, descripcion3, precio3, puntosEquivalentes3, agrandados, adiciones, controlProducto);
                 this.opcionesMenu.put(combo, cantidadMenuComprado);
-                this.precioTotalPedido += precioTotalMenu;
+                this.precioTotalPedido += precioTotalMenu * cantidadMenuComprado;
                 break;
             case "ParaCompartir3":
                 OpcionesMenu paraCompartir3 = new ParaCompartir(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, controlProducto, cantidadPresasAla, cantidadPresasPierna, cantidadPresasCuadro);
                 this.opcionesMenu.put(paraCompartir3, cantidadMenuComprado);
-                this.precioTotalPedido += precioTotalMenu;
+                this.precioTotalPedido += precioTotalMenu * cantidadMenuComprado;
                 break;
             case "ParaCompartir4":
                 OpcionesMenu paraCompartir4 = new ParaCompartir(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, tipo3, coccion3, nombre3, descripcion3, precio3, puntosEquivalentes3, identificador3, controlProducto, cantidadPresasAla, cantidadPresasPierna, cantidadPresasCuadro, cantidadPresasPechuga);
                 this.opcionesMenu.put(paraCompartir4, cantidadMenuComprado);
-                this.precioTotalPedido += precioTotalMenu;
+                this.precioTotalPedido += precioTotalMenu * cantidadMenuComprado;
                 break;
             case "Unidad":
                 OpcionesMenu unidad = new Unidad(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, controlProducto);
                 this.opcionesMenu.put(unidad, cantidadMenuComprado);
-                this.precioTotalPedido += precioTotalMenu;
+                this.precioTotalPedido += precioTotalMenu * cantidadMenuComprado;
                 break;
             default:
                 break;

@@ -118,11 +118,11 @@ public class PanelOtrosProductos extends javax.swing.JPanel {
         jTextFieldPrecioBebida = new javax.swing.JTextField();
         jLabel69 = new javax.swing.JLabel();
         jComboBoxSaborGaseosa = new javax.swing.JComboBox<>();
-        jLabel70 = new javax.swing.JLabel();
+        jLabelSaborGaseosa = new javax.swing.JLabel();
         jComboBoxTipoBebida = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jComboBoxSaborJugo = new javax.swing.JComboBox<>();
-        jLabel71 = new javax.swing.JLabel();
+        jLabelSaborJugo = new javax.swing.JLabel();
         jSpinnerUnidadesBebida = new javax.swing.JSpinner();
         jLabel43 = new javax.swing.JLabel();
         jPanel31 = new javax.swing.JPanel();
@@ -562,7 +562,7 @@ public class PanelOtrosProductos extends javax.swing.JPanel {
 
         jComboBoxSaborGaseosa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cola", "Naranja", "Limón", "Uva" }));
 
-        jLabel70.setText("Sabor Gaseosa");
+        jLabelSaborGaseosa.setText("Sabor Gaseosa");
 
         jComboBoxTipoBebida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jugo", "Gaseosa", "Agua" }));
 
@@ -570,7 +570,7 @@ public class PanelOtrosProductos extends javax.swing.JPanel {
 
         jComboBoxSaborJugo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mora", "Mango", "Limon", " " }));
 
-        jLabel71.setText("Sabor Jugo");
+        jLabelSaborJugo.setText("Sabor Jugo");
 
         jSpinnerUnidadesBebida.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
@@ -587,11 +587,11 @@ public class PanelOtrosProductos extends javax.swing.JPanel {
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
-                                    .addComponent(jLabel70)
+                                    .addComponent(jLabelSaborGaseosa)
                                     .addGap(53, 53, 53)
                                     .addComponent(jComboBoxSaborGaseosa, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
-                                    .addComponent(jLabel71)
+                                    .addComponent(jLabelSaborJugo)
                                     .addGap(53, 53, 53)
                                     .addComponent(jComboBoxSaborJugo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
@@ -637,11 +637,11 @@ public class PanelOtrosProductos extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBoxSaborGaseosa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel70))
+                    .addComponent(jLabelSaborGaseosa))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBoxSaborJugo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel71))
+                    .addComponent(jLabelSaborJugo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43)
@@ -1262,8 +1262,6 @@ public class PanelOtrosProductos extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
@@ -1275,6 +1273,8 @@ public class PanelOtrosProductos extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel9;
+    public javax.swing.JLabel jLabelSaborGaseosa;
+    public javax.swing.JLabel jLabelSaborJugo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
