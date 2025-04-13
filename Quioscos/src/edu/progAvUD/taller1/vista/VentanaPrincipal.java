@@ -99,6 +99,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
     }
 
+    public int preguntarMedioDePago() {
+        String[] opciones = {"Tarjeta", "Efectivo", "Puntos"};
+        // Mostrar el JOptionPane
+        int seleccion = JOptionPane.showOptionDialog(
+                null,
+                "¿Con que medio de pago deceas relizar el pedido?",
+                "Seleccione una opción",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.INFORMATION_MESSAGE,
+                null,
+                opciones,
+                opciones[0]
+        );
+        return seleccion;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

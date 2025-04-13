@@ -56,11 +56,13 @@ public class ControlGrafico implements ActionListener {
         ventanaPrincipal.panelCombos.jButtonAgregarPedidoCombo.addActionListener(this);
         ventanaPrincipal.panelParaCompartir.jButtonAgragarPedidoCompartir.addActionListener(this);
         ventanaPrincipal.panelOtrosProductos.jButtonAgragarPedidoProducto.addActionListener(this);
-        
+
         ActionListener actionListener = e -> actualizarPrecioTotalCombo();
-        
+
         ventanaPrincipal.panelCombos.jComboBoxAgrandadoGaseosa.addActionListener(actionListener);
         ventanaPrincipal.panelCombos.jComboBoxAgrandadoPapas.addActionListener(actionListener);
+        
+        ventanaPrincipal.panelPagar.jButtonIrAPagar.addActionListener(this);
 
         actualizarPrecioTotalBucket();
         actualizarPrecioTotalCombo();
@@ -133,10 +135,15 @@ public class ControlGrafico implements ActionListener {
             cargarUnidad();
             ventanaPrincipal.panelOtrosProductos.limpiarCampos();
         }
+        if (e.getSource()== ventanaPrincipal.panelPagar.jButtonIrAPagar){
+            String cedula = ventanaPrincipal.panelPagar.jTextFieldCedula.getText();
+            validarDescuento(cedula);
+            validarPago(cedula);
+        }
     }
 
     /**
-     *Se encarga de establecer los precios de los producto
+     * Se encarga de establecer los precios de los producto
      */
     public void cargarDatosPreciosMaps() {
         preciosPaneles.put("Pierna", 6000.0);
@@ -162,7 +169,8 @@ public class ControlGrafico implements ActionListener {
     }
 
     /**
-     * Le pone a los label los valores correspondientes de los precios para mostrarlos al consumidor
+     * Le pone a los label los valores correspondientes de los precios para
+     * mostrarlos al consumidor
      */
     public void ponerPreciosEnPaneles() {
         ventanaPrincipal.panelBuckets.jTextFieldPrecioPierna.setText("$ " + preciosPaneles.get("Pierna"));
@@ -198,7 +206,8 @@ public class ControlGrafico implements ActionListener {
     }
 
     /**
-     * Se encarga de obtener los valores y datos del bucket para pasarselos al controlPrincipal
+     * Se encarga de obtener los valores y datos del bucket para pasarselos al
+     * controlPrincipal
      */
     public void cargarBucket() {
         int unidadesAla = (int) ventanaPrincipal.panelBuckets.jSpinnerUnidadesAla.getValue();
@@ -231,7 +240,8 @@ public class ControlGrafico implements ActionListener {
     }
 
     /**
-     * Se encarga de obtener los valores y datos del combo para pasarselos al controlPrincipal
+     * Se encarga de obtener los valores y datos del combo para pasarselos al
+     * controlPrincipal
      */
     public void cargarCombo() {
         String partePollo = (String) ventanaPrincipal.panelCombos.jComboBoxPartePresa.getSelectedItem();
@@ -355,7 +365,8 @@ public class ControlGrafico implements ActionListener {
     }
 
     /**
-     * Se encarga de obtener los valores y datos del para Compartir para pasarselos al controlPrincipal
+     * Se encarga de obtener los valores y datos del para Compartir para
+     * pasarselos al controlPrincipal
      */
     public void cargarParaCompartir() {
         if ((int) ventanaPrincipal.panelParaCompartir.jSpinnerUnidadesCompartir1.getValue() == 0 && (int) ventanaPrincipal.panelParaCompartir.jSpinnerUnidadesCompartir2.getValue() == 0 && (int) ventanaPrincipal.panelParaCompartir.jSpinnerUnidadesCompartir3.getValue() == 0 && (int) ventanaPrincipal.panelParaCompartir.jSpinnerUnidadesCompartir4.getValue() == 0 && (int) ventanaPrincipal.panelParaCompartir.jSpinnerUnidadesCompartir5.getValue() == 0) {
@@ -404,7 +415,8 @@ public class ControlGrafico implements ActionListener {
     }
 
     /**
-     * Se encarga de obtener los valores y datos del producto para pasarselos al controlPrincipal
+     * Se encarga de obtener los valores y datos del producto para pasarselos al
+     * controlPrincipal
      */
     public void cargarUnidad() {
         int unidadesAla = (int) ventanaPrincipal.panelOtrosProductos.jSpinnerUnidadesAla.getValue();
@@ -471,7 +483,7 @@ public class ControlGrafico implements ActionListener {
     }
 
     /**
-     *Se encarga de ir actualizando el precio del combo
+     * Se encarga de ir actualizando el precio del combo
      */
     public void actualizarPrecioTotalComboChangeListener() {
         //Método para actualizar el texto del JTextField de PrecioTotal del Combo
@@ -562,4 +574,57 @@ public class ControlGrafico implements ActionListener {
         ventanaPrincipal.panelBuckets.jSpinnerUnidadesPechuga.addChangeListener(listenerToltalBucket);
         ventanaPrincipal.panelBuckets.jSpinnerUnidadesPierna.addChangeListener(listenerToltalBucket);
     }
+
+    public void validarDescuento(String cedula) {
+        double precioDePedido = controlPrincipal.getControlOpcionesMenu().getPrecioTotalPedido();
+        try {
+            double cedulaDouble = Double.parseDouble(cedula);
+            boolean estadoMayorDeEdad = this.controlPrincipal.getControlClientes().mayorEdad(cedulaDouble);
+            boolean estadoIndigena = this.controlPrincipal.getControlClientes().tieneCultura(cedulaDouble);
+
+            double precioDefinitivo;
+            if (estadoMayorDeEdad) {
+                precioDefinitivo = precioDePedido - (precioDePedido * (10 / 100));
+                ventanaPrincipal.mostrarMensajeExito("Usted aplica para descuento de mayor de edad (10%). El costo ha pagar sera de " + precioDefinitivo);
+                controlPrincipal.getControlOpcionesMenu().setPrecioTotalPedido(precioDefinitivo);
+            } else if (estadoIndigena) {
+                precioDefinitivo = precioDePedido - (precioDePedido * (8 / 100));
+                ventanaPrincipal.mostrarMensajeExito("Usted aplica para descuento de Indigena (8%). El costo ha pagar sera de " + precioDefinitivo);
+                controlPrincipal.getControlOpcionesMenu().setPrecioTotalPedido(precioDefinitivo);
+            }
+
+        } catch (NumberFormatException e) {
+            ventanaPrincipal.mostrarMensajeError("No se ha digitado un valor correcto en el campo de cedula");
+        }
+    }
+
+    public void validarPago(String cedula) {
+        try {
+            double cedulaDouble = Double.parseDouble(cedula);
+            int opcion = ventanaPrincipal.preguntarMedioDePago();
+            String metodoDePago;
+            double puntosObtenido = controlPrincipal.getControlOpcionesMenu().getPrecioTotalPedido() / 1000;
+            switch (opcion) {
+                case 0:
+                    metodoDePago = "Tarjeta";
+                    controlPrincipal.inicioSesionCliente(cedulaDouble, puntosObtenido, metodoDePago);
+                    break;
+                case 1:
+                    metodoDePago = "Efectivo";
+                    controlPrincipal.inicioSesionCliente(cedulaDouble, puntosObtenido, metodoDePago);
+                    break;
+                case 2:
+                    metodoDePago = "Puntos";
+                    controlPrincipal.inicioSesionCliente(cedulaDouble, puntosObtenido, metodoDePago);
+                    break;
+                default:
+                    ventanaPrincipal.mostrarMensajeError("No se selecciono ninguna Opcion");
+                    break;
+            }
+        } catch (NumberFormatException e) {
+        }
+
+    }
+    
+
 }

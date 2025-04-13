@@ -168,6 +168,12 @@ public class ControlOpcionesMenu {
         return precioTotalPedido;
     }
 
+    public void setPrecioTotalPedido(double precioTotalPedido) {
+        this.precioTotalPedido = precioTotalPedido;
+    }
+
+    
+    
     /**
      *
      * @return
