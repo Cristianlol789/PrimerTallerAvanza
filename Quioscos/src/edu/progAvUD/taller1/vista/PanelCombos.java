@@ -17,6 +17,41 @@ public class PanelCombos extends javax.swing.JPanel {
         initComponents();
     }
 
+    public void limpiarCampos() {
+        // Limpiar JCheckBox
+        jCheckBoxArrozAdicion.setSelected(false);
+        jCheckBoxChipsAdicion.setSelected(false);
+        jCheckBoxJalapeñosAdicion.setSelected(false);
+        jCheckBoxQuesoAdicion.setSelected(false);
+        jCheckBoxSalsaBbqAdicion.setSelected(false);
+        jCheckBoxSalsaPicanteAdicion.setSelected(false);
+        jCheckBoxSourCreamAdicion.setSelected(false);
+        jCheckBoxTocinoAdicion.setSelected(false);
+
+        // Resetear JComboBox al primer ítem
+        jComboBoxAgrandadoGaseosa.setSelectedIndex(0);
+        jComboBoxAgrandadoPapas.setSelectedIndex(0);
+        jComboBoxCoccionNuggets.setSelectedIndex(0);
+        jComboBoxCoccionPapas.setSelectedIndex(0);
+        jComboBoxCoccionPresa.setSelectedIndex(0);
+        jComboBoxCoccionStrips.setSelectedIndex(0);
+        jComboBoxEspecieStrips.setSelectedIndex(0);
+        jComboBoxPanHamburguesa.setSelectedIndex(0);
+        jComboBoxPartePresa.setSelectedIndex(0);
+        jComboBoxProteinaHamburguesa.setSelectedIndex(0);
+        jComboBoxProteinaWraps.setSelectedIndex(0);
+        jComboBoxQuesoWraps.setSelectedIndex(0);
+        jComboBoxSaborGaseosa.setSelectedIndex(0);
+        jComboBoxTipoNuggets.setSelectedIndex(0);
+        jComboBoxTipoPapas.setSelectedIndex(0);
+
+        // Limpiar selección de radio buttons (si están agrupados)
+        buttonGroup1.clearSelection();
+
+        // Reiniciar spinner
+        jSpinnerUnidadesCombo.setValue(1);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -352,4 +352,8 @@ public class ControlPrincipal {
     public void setControlProductos(ControlProducto controlProductos) {
         this.controlProductos = controlProductos;
     }
+    
+    public Object[][] enviarDatosTablaPedido(){
+        return controlOpcionesMenu.enviarDatosTablaPedido();
+    }
 }

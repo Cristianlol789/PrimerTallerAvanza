@@ -6,7 +6,6 @@ import edu.progAvUD.taller1.modelo.OpcionesMenu;
 import edu.progAvUD.taller1.modelo.ParaCompartir;
 import edu.progAvUD.taller1.modelo.Producto;
 import edu.progAvUD.taller1.modelo.Unidad;
-import java.awt.Image;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -160,6 +159,27 @@ public class ControlOpcionesMenu {
      */
     public double getPrecioTotalPedido() {
         return precioTotalPedido;
+    }
+
+    public Object[][] enviarDatosTablaPedido() {
+        int cantidadProductos = opcionesMenu.size();
+        Object[][] datos = new Object[cantidadProductos][4];
+
+        int i = 0;
+        for (OpcionesMenu productoPedido : opcionesMenu.keySet()) {
+            int cantidad = opcionesMenu.get(productoPedido);
+            double precioUnitario = productoPedido.getPrecioTotalMenu();
+            double total = cantidad * precioUnitario;
+
+            datos[i][0] = productoPedido.getNombreMenu();
+            datos[i][1] = cantidad;
+            datos[i][2] = precioUnitario;
+            datos[i][3] = total;
+
+            i++;
+        }
+
+        return datos;
     }
 
 }

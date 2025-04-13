@@ -17,6 +17,21 @@ public class PanelBuckets extends javax.swing.JPanel {
         initComponents();
     }
 
+    public void limpiarCampos() {
+        // Limpiar JComboBox
+        jComboBoxCoccionAla.setSelectedIndex(0);
+        jComboBoxCoccionCuadrito.setSelectedIndex(0);
+        jComboBoxCoccionPechuga.setSelectedIndex(0);
+        jComboBoxCoccionPierna.setSelectedIndex(0);
+
+        // Limpiar JSpinner
+        jSpinnerUnidadesAla.setValue(0);
+        jSpinnerUnidadesBucket.setValue(1);
+        jSpinnerUnidadesCuadrito.setValue(0);
+        jSpinnerUnidadesPechuga.setValue(0);
+        jSpinnerUnidadesPierna.setValue(0);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

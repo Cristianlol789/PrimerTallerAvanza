@@ -85,8 +85,11 @@ public class ControlGrafico implements ActionListener {
         if (e.getSource() == ventanaPrincipal.panelInicial.jButtonSiguiente) {
             if (ventanaPrincipal.panelInicial.jRadioButtonComerAqui.isSelected()) {
                 ventanaPrincipal.jMenuBar1.setVisible(true);
-                ventanaPrincipal.mostrarPanel(ventanaPrincipal.panelBuckets);
-            } else {
+                ventanaPrincipal.getContentPane().removeAll();
+                ventanaPrincipal.repaint();
+                ventanaPrincipal.revalidate();
+                ventanaPrincipal.jMenuPagar.setVisible(false);
+            } else if(ventanaPrincipal.panelInicial.jRadioButtonLlevar.isSelected()) {
                 ventanaPrincipal.mostrarMensajeError("Seccion en desarrollo. Gracias por su paciencia");
             }
         }
@@ -102,6 +105,7 @@ public class ControlGrafico implements ActionListener {
         }
         if (e.getSource() == ventanaPrincipal.jMenuItemPagar) {
             ventanaPrincipal.mostrarPanel(ventanaPrincipal.panelPagar);
+            ventanaPrincipal.panelPagar.CargarDatosPedido(controlPrincipal.enviarDatosTablaPedido());
         }
         if (e.getSource() == ventanaPrincipal.jMenuItemParaCompartir) {
             ventanaPrincipal.mostrarPanel(ventanaPrincipal.panelParaCompartir);
@@ -109,15 +113,21 @@ public class ControlGrafico implements ActionListener {
         // Respuesta de panelBucket
         if (e.getSource() == ventanaPrincipal.panelBuckets.jButtonAgregarPedidoBucket) {
             cargarBucket();
+            ventanaPrincipal.panelBuckets.limpiarCampos();
+            
         }
         if (e.getSource() == ventanaPrincipal.panelCombos.jButtonAgregarPedidoCombo) {
             cargarCombo();
+            ventanaPrincipal.panelCombos.limpiarCampos();
         }
         if (e.getSource() == ventanaPrincipal.panelParaCompartir.jButtonAgragarPedidoCompartir) {
             cargarParaCompartir();
+            ventanaPrincipal.panelParaCompartir.limpiarCampos();
         }
         if (e.getSource() == ventanaPrincipal.panelOtrosProductos.jButtonAgragarPedidoProducto) {
             cargarUnidad();
+            ventanaPrincipal.panelOtrosProductos.limpiarCampos();
+            
         }
     }
 
@@ -203,6 +213,7 @@ public class ControlGrafico implements ActionListener {
                     "Pechuga", coccionPechuga, "Presa de pollo", "Pechuga de Pollo apanada al estilo FormFood", preciosPaneles.get("Pechuga"), preciosPaneles.get("Pechuga"), unidadesPechuga,
                     unidadesBucket);
             ventanaPrincipal.mostrarMensajeExito("Se ha añadido correctamente el bucket al pedido");
+            ventanaPrincipal.jMenuPagar.setVisible(true);
         }
     }
 
@@ -290,6 +301,7 @@ public class ControlGrafico implements ActionListener {
                     tipoEspecieStrips, tipoCoccionStrips, "Strips", "Unos strips para acompañar tu combo", preciosPaneles.get("Strips"), preciosPaneles.get("Strips"), "Strips",
                     agrandados, adiciones, unidadesCombo);
             ventanaPrincipal.mostrarMensajeExito("Se ha añadido correctamente el combo al pedido");
+            ventanaPrincipal.jMenuPagar.setVisible(true);
         } else if (ventanaPrincipal.panelCombos.jRadioButtonNuggets.isSelected()) {
             precioTotalCombo += preciosPaneles.get("Nuggets");
             controlPrincipal.crearCombo("Combo Personalizado", precioTotalCombo, precioTotalCombo,
@@ -299,6 +311,7 @@ public class ControlGrafico implements ActionListener {
                     tipoEspecieStrips, tipoCoccionStrips, "Strips", "Unos strips para acompañar tu combo", preciosPaneles.get("Strips"), preciosPaneles.get("Strips"), "Strips",
                     agrandados, adiciones, unidadesCombo);
             ventanaPrincipal.mostrarMensajeExito("Se ha añadido correctamente el combo al pedido");
+            ventanaPrincipal.jMenuPagar.setVisible(true);
         } else if (ventanaPrincipal.panelCombos.jRadioButtonHamburguesa.isSelected()) {
             precioTotalCombo += +preciosPaneles.get("Hamburguesa");
             controlPrincipal.crearCombo("Combo Personalizado", precioTotalCombo, precioTotalCombo,
@@ -308,6 +321,7 @@ public class ControlGrafico implements ActionListener {
                     tipoEspecieStrips, tipoCoccionStrips, "Strips", "Unos strips para acompañar tu combo", preciosPaneles.get("Strips"), preciosPaneles.get("Strips"), "Strips",
                     agrandados, adiciones, unidadesCombo);
             ventanaPrincipal.mostrarMensajeExito("Se ha añadido correctamente el combo al pedido");
+            ventanaPrincipal.jMenuPagar.setVisible(true);
         } else if (ventanaPrincipal.panelCombos.jRadioButtonWraps.isSelected()) {
             precioTotalCombo += preciosPaneles.get("Wraps");
             controlPrincipal.crearCombo("Combo Personalizado", precioTotalCombo, precioTotalCombo,
@@ -317,6 +331,7 @@ public class ControlGrafico implements ActionListener {
                     tipoEspecieStrips, tipoCoccionStrips, "Strips", "Unos strips para acompañar tu combo", preciosPaneles.get("Strips"), preciosPaneles.get("Strips"), "Strips",
                     agrandados, adiciones, unidadesCombo);
             ventanaPrincipal.mostrarMensajeExito("Se ha añadido correctamente el combo al pedido");
+            ventanaPrincipal.jMenuPagar.setVisible(true);
         } else {
             ventanaPrincipal.mostrarMensajeError("No se ha seleccionado nada de producto principal");
         }
@@ -365,6 +380,7 @@ public class ControlGrafico implements ActionListener {
                         (int) ventanaPrincipal.panelParaCompartir.jSpinnerUnidadesCompartir5.getValue(), 1, 3, 1, 2);
             }
             ventanaPrincipal.mostrarMensajeExito("Se ha añadido correctamente el para compartir al pedido");
+            ventanaPrincipal.jMenuPagar.setVisible(true);
         }
     }
 
@@ -427,6 +443,7 @@ public class ControlGrafico implements ActionListener {
                     controlPrincipal.crearUnidad("Wraps", preciosPaneles.get("Wraps"), preciosPaneles.get("Wraps"), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxProteinaWraps.getSelectedItem(), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxQuesoWraps.getSelectedItem(), "Wraps", "Los mejores wraps al estilo FormFood", preciosPaneles.get("Wraps"), preciosPaneles.get("Wraps"), "Wrap", unidadesWraps);
                 }
                 ventanaPrincipal.mostrarMensajeExito("Se ha añadido correctamente el o los productos pedidos");
+                ventanaPrincipal.jMenuPagar.setVisible(true);
             }
         }
     }

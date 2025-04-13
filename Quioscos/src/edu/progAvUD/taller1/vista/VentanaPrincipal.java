@@ -73,7 +73,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuItemParaCompartir = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItemMasProductos = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
+        jMenuPagar = new javax.swing.JMenu();
         jMenuItemPagar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -107,12 +107,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu5);
 
-        jMenu6.setText("Pagar");
+        jMenuPagar.setText("Pagar");
 
         jMenuItemPagar.setText("Ir a pagar");
-        jMenu6.add(jMenuItemPagar);
+        jMenuPagar.add(jMenuItemPagar);
 
-        jMenuBar1.add(jMenu6);
+        jMenuBar1.add(jMenuPagar);
 
         setJMenuBar(jMenuBar1);
 
@@ -135,12 +135,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     public javax.swing.JMenuBar jMenuBar1;
     public javax.swing.JMenuItem jMenuItemCrearBucket;
     public javax.swing.JMenuItem jMenuItemCrearCombo;
     public javax.swing.JMenuItem jMenuItemMasProductos;
     public javax.swing.JMenuItem jMenuItemPagar;
     public javax.swing.JMenuItem jMenuItemParaCompartir;
+    public javax.swing.JMenu jMenuPagar;
     // End of variables declaration//GEN-END:variables
 }

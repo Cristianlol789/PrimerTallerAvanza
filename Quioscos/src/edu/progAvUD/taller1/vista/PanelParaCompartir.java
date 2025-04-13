@@ -17,6 +17,16 @@ public class PanelParaCompartir extends javax.swing.JPanel {
         initComponents();
     }
 
+    public void limpiarCampos() {
+
+        // Reiniciar JSpinner
+        jSpinnerUnidadesCompartir1.setValue(0);
+        jSpinnerUnidadesCompartir2.setValue(0);
+        jSpinnerUnidadesCompartir3.setValue(0);
+        jSpinnerUnidadesCompartir4.setValue(0);
+        jSpinnerUnidadesCompartir5.setValue(0);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

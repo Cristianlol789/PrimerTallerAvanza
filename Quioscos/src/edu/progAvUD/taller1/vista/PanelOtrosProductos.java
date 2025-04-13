@@ -17,6 +17,39 @@ public class PanelOtrosProductos extends javax.swing.JPanel {
         initComponents();
     }
 
+    public void limpiarCampos() {
+        // Limpiar JComboBox
+        jComboBoxCoccionAla.setSelectedIndex(0);
+        jComboBoxCoccionCuadrito.setSelectedIndex(0);
+        jComboBoxCoccionNuggets.setSelectedIndex(0);
+        jComboBoxCoccionPapas.setSelectedIndex(0);
+        jComboBoxCoccionPechuga.setSelectedIndex(0);
+        jComboBoxCoccionPierna.setSelectedIndex(0);
+        jComboBoxCoccionStrips.setSelectedIndex(0);
+        jComboBoxEspecieStrips.setSelectedIndex(0);
+        jComboBoxPanHamburguesa.setSelectedIndex(0);
+        jComboBoxProteinaHamburguesa.setSelectedIndex(0);
+        jComboBoxProteinaWraps.setSelectedIndex(0);
+        jComboBoxQuesoWraps.setSelectedIndex(0);
+        jComboBoxSaborGaseosa.setSelectedIndex(0);
+        jComboBoxSaborJugo.setSelectedIndex(0);
+        jComboBoxTipoBebida.setSelectedIndex(0);
+        jComboBoxTipoNuggets.setSelectedIndex(0);
+        jComboBoxTipoPapas.setSelectedIndex(0);
+
+        // Limpiar JSpinner (poner en 0)
+        jSpinnerUnidadesAla.setValue(0);
+        jSpinnerUnidadesBebida.setValue(0);
+        jSpinnerUnidadesCuadrito.setValue(0);
+        jSpinnerUnidadesHamburguesa.setValue(0);
+        jSpinnerUnidadesNuggets.setValue(0);
+        jSpinnerUnidadesPapas.setValue(0);
+        jSpinnerUnidadesPechuga.setValue(0);
+        jSpinnerUnidadesPierna.setValue(0);
+        jSpinnerUnidadesStrips.setValue(0);
+        jSpinnerUnidadesWraps.setValue(0);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
