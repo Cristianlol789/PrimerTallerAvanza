@@ -69,7 +69,7 @@ public class ControlGrafico implements ActionListener {
                 ventanaPrincipal.mostrarPanel(ventanaPrincipal.panelInicial);
                 ventanaPrincipal.panelInicial.setVisible(true);
                 ventanaPrincipal.jMenuBar1.setVisible(false);
-                
+
                 ventanaPrincipal.panelPagar.limpiarCampos();
                 controlPrincipal.getControlOpcionesMenu().vaciarHashMap();
                 controlPrincipal.getControlOpcionesMenu().vaciarPrecio();
@@ -115,7 +115,7 @@ public class ControlGrafico implements ActionListener {
             ventanaPrincipal.mostrarPanel(ventanaPrincipal.panelPagar);
             ventanaPrincipal.panelPagar.CargarDatosPedido(controlPrincipal.getControlOpcionesMenu().enviarDatosTablaPedido());
             ventanaPrincipal.panelPagar.jTextFieldTotalPagar.setText("$ " + controlPrincipal.getControlOpcionesMenu().getPrecioTotalPedido());
-            ventanaPrincipal.panelPagar.jTextFieldTotalPagarPuntos.setText("" + controlPrincipal.getControlOpcionesMenu().getPrecioTotalPedido()/1000);
+            ventanaPrincipal.panelPagar.jTextFieldTotalPagarPuntos.setText("" + controlPrincipal.getControlOpcionesMenu().getPrecioTotalPedido() / 1000);
         }
         if (e.getSource() == ventanaPrincipal.jMenuItemParaCompartir) {
             ventanaPrincipal.mostrarPanel(ventanaPrincipal.panelParaCompartir);
@@ -140,17 +140,20 @@ public class ControlGrafico implements ActionListener {
         }
         if (e.getSource() == ventanaPrincipal.panelPagar.jButtonIrAPagar) {
             String cedula = ventanaPrincipal.panelPagar.jTextFieldCedula.getText();
-            validarDescuento(cedula);
-            ventanaPrincipal.panelPagar.setVisible(false);
-            validarPago(cedula);
-            ventanaPrincipal.panelPagar.setVisible(true);
-            ventanaPrincipal.panelPagar.limpiarCampos();
-            ventanaPrincipal.mostrarPanel(ventanaPrincipal.panelInicial);
-            ventanaPrincipal.panelInicial.setVisible(true);
-            ventanaPrincipal.jMenuBar1.setVisible(false);
-            ventanaPrincipal.jMenuPagar.setVisible(false);
+            if (!cedula.equals("")) {
+                validarDescuento(cedula);
+                ventanaPrincipal.panelPagar.setVisible(false);
+                validarPago(cedula);
+                ventanaPrincipal.panelPagar.setVisible(true);
+                ventanaPrincipal.panelPagar.limpiarCampos();
+                ventanaPrincipal.mostrarPanel(ventanaPrincipal.panelInicial);
+                ventanaPrincipal.panelInicial.setVisible(true);
+                ventanaPrincipal.jMenuBar1.setVisible(false);
+                ventanaPrincipal.jMenuPagar.setVisible(false);
+            } else {
+                ventanaPrincipal.mostrarMensajeError("No se puede dejar el campo vacio");
+            }
         }
-
     }
 
     /**
@@ -511,33 +514,33 @@ public class ControlGrafico implements ActionListener {
                         "Pechuga de pollo", "Pechuga de pollo apanada al estilo FormFood", preciosPaneles.get("Pechuga"), preciosPuntosPaneles.get("Pechuga"), "PresaPollo", unidadesPechuga);
             }
             if (unidadesPierna != 0) {
-                controlPrincipal.crearUnidad("Pierna", preciosPaneles.get("Pierna"), preciosPuntosPaneles.get("Pierna"), "Pierna de Pollo", coccionPechuga, 
+                controlPrincipal.crearUnidad("Pierna", preciosPaneles.get("Pierna"), preciosPuntosPaneles.get("Pierna"), "Pierna de Pollo", coccionPechuga,
                         "Pierna de pollo", "Pierna de pollo apanada al estilo FormFood", preciosPaneles.get("Pierna"), preciosPuntosPaneles.get("Pierna"), "PresaPollo", unidadesPierna);
             }
             if (unidadesStrips != 0) {
-                controlPrincipal.crearUnidad("Strips", preciosPaneles.get("Strips"), preciosPuntosPaneles.get("Strips"), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxEspecieStrips.getSelectedItem(), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxCoccionStrips.getSelectedItem(), 
+                controlPrincipal.crearUnidad("Strips", preciosPaneles.get("Strips"), preciosPuntosPaneles.get("Strips"), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxEspecieStrips.getSelectedItem(), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxCoccionStrips.getSelectedItem(),
                         "Strips", "Unos strips para acompañar tu combo", preciosPaneles.get("Strips"), preciosPuntosPaneles.get("Strips"), "Strips", unidadesStrips);
             }
             if (unidadesWraps != 0) {
-                controlPrincipal.crearUnidad("Wraps", preciosPaneles.get("Wraps"), preciosPuntosPaneles.get("Wraps"), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxProteinaWraps.getSelectedItem(), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxQuesoWraps.getSelectedItem(), 
+                controlPrincipal.crearUnidad("Wraps", preciosPaneles.get("Wraps"), preciosPuntosPaneles.get("Wraps"), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxProteinaWraps.getSelectedItem(), (String) ventanaPrincipal.panelOtrosProductos.jComboBoxQuesoWraps.getSelectedItem(),
                         "Wraps", "Los mejores wraps al estilo FormFood", preciosPaneles.get("Wraps"), preciosPuntosPaneles.get("Wraps"), "Wrap", unidadesWraps);
             }
             if (unidadesBebida != 0) {
                 if (tipoBebida.equalsIgnoreCase("Gaseosa")) {
-                    controlPrincipal.crearUnidad("Bebida", preciosPaneles.get("Bebida"), preciosPuntosPaneles.get("Bebida"), "Gaseosa", (String) ventanaPrincipal.panelOtrosProductos.jComboBoxSaborGaseosa.getSelectedItem(), 
+                    controlPrincipal.crearUnidad("Bebida", preciosPaneles.get("Bebida"), preciosPuntosPaneles.get("Bebida"), "Gaseosa", (String) ventanaPrincipal.panelOtrosProductos.jComboBoxSaborGaseosa.getSelectedItem(),
                             "Gaseosa", "Una bebida para acompañar", preciosPaneles.get("Bebida"), preciosPuntosPaneles.get("Bebida"), "Bebida", unidadesBebida);
                 }
                 if (tipoBebida.equalsIgnoreCase("Jugo")) {
-                    controlPrincipal.crearUnidad("Bebida", preciosPaneles.get("Bebida"), preciosPuntosPaneles.get("Bebida"), "Jugo", (String) ventanaPrincipal.panelOtrosProductos.jComboBoxSaborJugo.getSelectedItem(), 
+                    controlPrincipal.crearUnidad("Bebida", preciosPaneles.get("Bebida"), preciosPuntosPaneles.get("Bebida"), "Jugo", (String) ventanaPrincipal.panelOtrosProductos.jComboBoxSaborJugo.getSelectedItem(),
                             "Jugo", "Una bebida para acompañar", preciosPaneles.get("Bebida"), preciosPuntosPaneles.get("Bebida"), "Bebida", unidadesBebida);
                 }
                 if (tipoBebida.equalsIgnoreCase("Agua")) {
-                    controlPrincipal.crearUnidad("Bebida", preciosPaneles.get("Bebida"), preciosPuntosPaneles.get("Bebida"), "Agua", "Insabora", 
+                    controlPrincipal.crearUnidad("Bebida", preciosPaneles.get("Bebida"), preciosPuntosPaneles.get("Bebida"), "Agua", "Insabora",
                             "Agua", "Una bebida para acompañar", preciosPaneles.get("Bebida"), preciosPuntosPaneles.get("Bebida"), "Bebida", unidadesBebida);
                 }
             }
             if (unidadesCuadrito != 0) {
-                controlPrincipal.crearUnidad("Cuadrito", preciosPaneles.get("Cuadrito"), preciosPuntosPaneles.get("Cuadrito"), "Cuadrito", coccionCuadrito, 
+                controlPrincipal.crearUnidad("Cuadrito", preciosPaneles.get("Cuadrito"), preciosPuntosPaneles.get("Cuadrito"), "Cuadrito", coccionCuadrito,
                         "Cuadrito", "Cuadrito de pollo apanado al estilo FormFood", preciosPaneles.get("Cuadrito"), preciosPuntosPaneles.get("Cuadrito"), "PresaPollo", unidadesCuadrito);
             }
             if (unidadesHamburguesa != 0) {
@@ -651,6 +654,10 @@ public class ControlGrafico implements ActionListener {
         ventanaPrincipal.panelCombos.jComboBoxAgrandadoPapas.addActionListener(comboBoxListenerCombo);
     }
 
+    /**
+     * Este panel es el encargado de ir ocultando y mostrando las bebidas y sus
+     * sabores segun las elecciones del usuario
+     */
     public void actualizarBebidaPanelOtrosProductos() {
         ventanaPrincipal.panelOtrosProductos.jLabelSaborJugo.setVisible(true);
         ventanaPrincipal.panelOtrosProductos.jComboBoxSaborJugo.setVisible(true);
@@ -707,6 +714,11 @@ public class ControlGrafico implements ActionListener {
         ventanaPrincipal.panelBuckets.jSpinnerUnidadesPierna.addChangeListener(listenerToltalBucket);
     }
 
+    /**
+     * Se encarga de ver si la persona creada tiene descuento y se lo aplica
+     *
+     * @param cedula parametro para saber cual es la persona
+     */
     public void validarDescuento(String cedula) {
         double precioDePedido = controlPrincipal.getControlOpcionesMenu().getPrecioTotalPedido();
         try {
@@ -730,6 +742,12 @@ public class ControlGrafico implements ActionListener {
         }
     }
 
+    /**
+     * Este metodo se encarga de ver como se pago y de hacer las respectivas
+     * operaciones de descuento o aumento de puntos de la persona
+     *
+     * @param cedula parametro para saber cual es la persona
+     */
     public void validarPago(String cedula) {
         try {
             double cedulaDouble = Double.parseDouble(cedula);
@@ -763,6 +781,7 @@ public class ControlGrafico implements ActionListener {
                     break;
             }
         } catch (NumberFormatException e) {
+            ventanaPrincipal.mostrarMensajeError("No se ha digitado un valor correcto en el campo de cedula");
         }
 
     }

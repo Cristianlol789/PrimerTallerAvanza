@@ -168,12 +168,14 @@ public class ControlOpcionesMenu {
         return precioTotalPedido;
     }
 
+    /**
+     *Se encarga de establecer el nuevo valor del pedido
+     * @param precioTotalPedido variable encargada de establecer un valor al pedido
+     */
     public void setPrecioTotalPedido(double precioTotalPedido) {
         this.precioTotalPedido = precioTotalPedido;
     }
 
-    
-    
     /**
      *
      * @return

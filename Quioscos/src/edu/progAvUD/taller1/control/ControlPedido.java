@@ -6,11 +6,15 @@ import edu.progAvUD.taller1.modelo.Pedido;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Esta clase se encarga de administrar todo lo relacionado a pedidos, como es crearlos o modificarlos ademas guarda un arreglo que es utilizado para cargar una tabla
+ * @author Cristianlol789
+ */
 public class ControlPedido {
 
     private ControlPrincipal controlPrincipal;
     private int numeroTicket;
-    private ArrayList<Pedido> pedidos;  // Declaration remains here
+    private ArrayList<Pedido> pedidos;  
     
     /**
      * Inicializa las variables para guardar los parametros de los demas metodos
@@ -19,7 +23,7 @@ public class ControlPedido {
     public ControlPedido(ControlPrincipal controlPrincipal) {
         this.controlPrincipal = controlPrincipal;
         this.numeroTicket = 0;
-        this.pedidos = new ArrayList<>();  // Initialize the list
+        this.pedidos = new ArrayList<>();  
     }
     
     /**

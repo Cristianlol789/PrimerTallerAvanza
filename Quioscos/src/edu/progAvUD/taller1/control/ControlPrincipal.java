@@ -45,6 +45,7 @@ public class ControlPrincipal {
      * @param cedula Número de cédula del cliente
      * @param puntosEquivalentes Puntos equivalentes asociados al cliente
      * @param metodoDePago forma en la que el cliente desidio pagar
+     * @return devuelve los datos relacionado a lo que paso con el pago
      */
     public String inicioSesionCliente(double cedula, double puntosEquivalentes, String metodoDePago) {
         String info = controlClientes.buscarCliente(cedula, puntosEquivalentes);
@@ -62,6 +63,13 @@ public class ControlPrincipal {
         controlPedido.crearPedido(cedula, metodoDePago);
     }
     
+    /**
+     *El metodo se encarga de realizar un pago por medio de puntos
+     * @param cedula identificador de el cliente
+     * @param puntosEquivalentes cantidad de puntos a descontar
+     * @param metodoDePago forma en la que pago 
+     * @return retorna la informacion relacionada con la transaccion
+     */
     public String pagoPuntos(double cedula, double puntosEquivalentes, String metodoDePago){
         String info = controlClientes.pagarPuntos(cedula, puntosEquivalentes);
         crearPedido(cedula, metodoDePago);
@@ -366,6 +374,5 @@ public class ControlPrincipal {
     public void setControlProductos(ControlProducto controlProductos) {
         this.controlProductos = controlProductos;
     }
-    
 
 }

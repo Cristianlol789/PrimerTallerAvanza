@@ -30,6 +30,9 @@ public class ControlClientes {
         crearCliente();
     }
 
+    /**
+     * Se crean tres personas con atributos predeterminados
+     */
     public void crearTresClientesPredeterminados() {
         // Cliente 1: Con cultura definida
         Cliente cliente1 = new Cliente(10123456, "Roberto García", 45, "Zenú", 30000);
