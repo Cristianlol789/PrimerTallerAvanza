@@ -5,7 +5,7 @@
 package edu.progAvUD.taller1.vista;
 
 /**
- *
+ * Se encarga de mostrar todo lo relacionado con el combo
  * @author Andres Felipe
  */
 public class PanelCombos extends javax.swing.JPanel {
@@ -17,6 +17,9 @@ public class PanelCombos extends javax.swing.JPanel {
         initComponents();
     }
 
+    /**
+     *Limpia los campos ya rellenados
+     */
     public void limpiarCampos() {
         // Limpiar JCheckBox
         jCheckBoxArrozAdicion.setSelected(false);

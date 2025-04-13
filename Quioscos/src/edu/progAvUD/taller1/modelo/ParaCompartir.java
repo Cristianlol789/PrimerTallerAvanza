@@ -49,6 +49,9 @@ public class ParaCompartir extends OpcionesMenu {
      * @param puntosEquivalentes2 puntos del tercer producto
      * @param identificador2 identificador del tercer producto
      * @param controlProducto controlador para crear productos
+     * @param cantidadProducto guarda la cantidad de productos
+     * @param cantidadProducto1 guarda la cantidad de productos
+     * @param cantidadProducto2 guarda la cantidad de productos
      */
     public ParaCompartir(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, String identificador1, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, String identificador2, ControlProducto controlProducto, int cantidadProducto, int cantidadProducto1, int cantidadProducto2) {
         super(nombreMenu, precioTotalMenu, puntosEquivalentesMenu);
@@ -93,6 +96,10 @@ public class ParaCompartir extends OpcionesMenu {
      * @param puntosEquivalentes3 puntos del tercer producto
      * @param identificador3 identificador del tercer producto
      * @param controlProducto controlador para crear productos
+     * @param cantidadProducto guarda la cantidad de productos
+     * @param cantidadProducto3 guarda la cantidad de productos
+     * @param cantidadProducto1 guarda la cantidad de productos
+     * @param cantidadProducto2 guarda la cantidad de productos
      */
     public ParaCompartir(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, String identificador1, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, String identificador2, String tipo3, String coccion3, String nombre3, String descripcion3, double precio3, double puntosEquivalentes3, String identificador3, ControlProducto controlProducto, int cantidadProducto, int cantidadProducto1, int cantidadProducto2, int cantidadProducto3) {
         super(nombreMenu, precioTotalMenu, puntosEquivalentesMenu);
@@ -103,10 +110,18 @@ public class ParaCompartir extends OpcionesMenu {
         producto.put(controlProducto.crearProducto(tipo3, coccion3, nombre3, descripcion3, precio3, puntosEquivalentes3, identificador3), cantidadProducto3);
     }
 
+    /**
+     *
+     * @return
+     */
     public HashMap<Producto, Integer> getProducto() {
         return producto;
     }
 
+    /**
+     *
+     * @param producto
+     */
     public void setProducto(HashMap<Producto, Integer> producto) {
         this.producto = producto;
     }

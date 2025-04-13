@@ -182,6 +182,9 @@ public class ControlPrincipal {
      * @param puntosEquivalentes2 Puntos equivalentes del tercer componente.
      * @param identificador2 Identificador del tercer componente.
      * @param cantidadMenuComprado Cantidad asociada al menú
+     * @param cantidadProducto
+     * @param cantidadProducto1
+     * @param cantidadProducto2
      */
     public void crearParaCompartir3(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, String identificador1, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, String identificador2, int cantidadMenuComprado, int cantidadProducto, int cantidadProducto1, int cantidadProducto2) {
         String identificadorMenu = "ParaCompartir3";
@@ -226,6 +229,10 @@ public class ControlPrincipal {
      * @param identificador3 Identificador del cuarto componente.
      * @param cantidadMenuComprado Indica la cantidad o medida del menú
      * comprado.
+     * @param cantidadProducto
+     * @param cantidadProducto1
+     * @param cantidadProducto2
+     * @param cantidadProducto3
      */
     public void crearParaCompartir4(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, String identificador1, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, String identificador2, String tipo3, String coccion3, String nombre3, String descripcion3, double precio3, double puntosEquivalentes3, String identificador3, int cantidadMenuComprado, int cantidadProducto, int cantidadProducto1, int cantidadProducto2, int cantidadProducto3) {
         String identificadorMenu = "ParaCompartir4";
@@ -353,6 +360,10 @@ public class ControlPrincipal {
         this.controlProductos = controlProductos;
     }
     
+    /**
+     *
+     * @return
+     */
     public Object[][] enviarDatosTablaPedido(){
         return controlOpcionesMenu.enviarDatosTablaPedido();
     }

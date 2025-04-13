@@ -135,6 +135,9 @@ public class ControlGrafico implements ActionListener {
         }
     }
 
+    /**
+     *Se encarga de establecer los precios de los producto
+     */
     public void cargarDatosPreciosMaps() {
         preciosPaneles.put("Pierna", 6000.0);
         preciosPaneles.put("Pechuga", 8000.0);
@@ -158,6 +161,9 @@ public class ControlGrafico implements ActionListener {
 
     }
 
+    /**
+     * Le pone a los label los valores correspondientes de los precios para mostrarlos al consumidor
+     */
     public void ponerPreciosEnPaneles() {
         ventanaPrincipal.panelBuckets.jTextFieldPrecioPierna.setText("$ " + preciosPaneles.get("Pierna"));
         ventanaPrincipal.panelBuckets.jTextFieldPrecioPechuga.setText("$ " + preciosPaneles.get("Pechuga"));
@@ -191,6 +197,9 @@ public class ControlGrafico implements ActionListener {
 
     }
 
+    /**
+     * Se encarga de obtener los valores y datos del bucket para pasarselos al controlPrincipal
+     */
     public void cargarBucket() {
         int unidadesAla = (int) ventanaPrincipal.panelBuckets.jSpinnerUnidadesAla.getValue();
         int unidadesPechuga = (int) ventanaPrincipal.panelBuckets.jSpinnerUnidadesPechuga.getValue();
@@ -221,6 +230,9 @@ public class ControlGrafico implements ActionListener {
         }
     }
 
+    /**
+     * Se encarga de obtener los valores y datos del combo para pasarselos al controlPrincipal
+     */
     public void cargarCombo() {
         String partePollo = (String) ventanaPrincipal.panelCombos.jComboBoxPartePresa.getSelectedItem();
         String tipoCoccionPollo = (String) ventanaPrincipal.panelCombos.jComboBoxCoccionPresa.getSelectedItem();
@@ -342,6 +354,9 @@ public class ControlGrafico implements ActionListener {
 
     }
 
+    /**
+     * Se encarga de obtener los valores y datos del para Compartir para pasarselos al controlPrincipal
+     */
     public void cargarParaCompartir() {
         if ((int) ventanaPrincipal.panelParaCompartir.jSpinnerUnidadesCompartir1.getValue() == 0 && (int) ventanaPrincipal.panelParaCompartir.jSpinnerUnidadesCompartir2.getValue() == 0 && (int) ventanaPrincipal.panelParaCompartir.jSpinnerUnidadesCompartir3.getValue() == 0 && (int) ventanaPrincipal.panelParaCompartir.jSpinnerUnidadesCompartir4.getValue() == 0 && (int) ventanaPrincipal.panelParaCompartir.jSpinnerUnidadesCompartir5.getValue() == 0) {
             ventanaPrincipal.mostrarMensajeError("No se ha podido añadir al carrito porque no hay ningun producto seleccionado");
@@ -388,6 +403,9 @@ public class ControlGrafico implements ActionListener {
         }
     }
 
+    /**
+     * Se encarga de obtener los valores y datos del producto para pasarselos al controlPrincipal
+     */
     public void cargarUnidad() {
         int unidadesAla = (int) ventanaPrincipal.panelOtrosProductos.jSpinnerUnidadesAla.getValue();
         int unidadesPechuga = (int) ventanaPrincipal.panelOtrosProductos.jSpinnerUnidadesPechuga.getValue();
@@ -452,6 +470,9 @@ public class ControlGrafico implements ActionListener {
         }
     }
 
+    /**
+     *Se encarga de ir actualizando el precio del combo
+     */
     public void actualizarPrecioTotalComboChangeListener() {
         //Método para actualizar el texto del JTextField de PrecioTotal del Combo
         ChangeListener listenerToltalCombo = new ChangeListener() {
@@ -475,6 +496,9 @@ public class ControlGrafico implements ActionListener {
         ventanaPrincipal.panelCombos.jCheckBoxTocinoAdicion.addChangeListener(listenerToltalCombo);
     }
 
+    /**
+     * Se encarga de actualizar el precio del combo
+     */
     public void actualizarPrecioTotalCombo() {
         int cantidadAdiciones = (int) Arrays.asList(
                 ventanaPrincipal.panelCombos.jCheckBoxQuesoAdicion,
@@ -516,6 +540,9 @@ public class ControlGrafico implements ActionListener {
         ventanaPrincipal.panelCombos.jTextFieldPrecioTotalCombo.setText("$ " + TotalCombo);
     }
 
+    /**
+     * Se encarga de ir actualizando el precio del bucket
+     */
     public void actualizarPrecioTotalBucket() {
         // Método para actualizar el texto del JTextField de PrecioTotal del Bucket
         ChangeListener listenerToltalBucket = new ChangeListener() {

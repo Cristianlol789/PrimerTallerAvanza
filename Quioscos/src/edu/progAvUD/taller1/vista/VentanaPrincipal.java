@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package edu.progAvUD.taller1.vista;
 
 import edu.progAvUD.taller1.control.ControlGrafico;
@@ -9,20 +5,56 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
+ * Representa la ventana principal de la aplicación gráfica. Controla y gestiona
+ * el cambio entre los diferentes paneles del sistema, mostrando la interfaz
+ * correspondiente según la opción seleccionada.
+ *
+ * También ofrece métodos para mostrar mensajes de éxito o error al usuario.
  *
  * @author Andres Felipe
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
+    /**
+     * Controlador gráfico encargado de manejar la lógica de la interfaz.
+     */
     private ControlGrafico controlGrafico;
+
+    /**
+     * Panel inicial de la aplicación.
+     */
     public PanelInicial panelInicial;
+
+    /**
+     * Panel que muestra los menús tipo Bucket.
+     */
     public PanelBuckets panelBuckets;
+
+    /**
+     * Panel que muestra los menús tipo Combo.
+     */
     public PanelCombos panelCombos;
+
+    /**
+     * Panel que muestra los productos que no son parte de combos ni buckets.
+     */
     public PanelOtrosProductos panelOtrosProductos;
+
+    /**
+     * Panel encargado del proceso de pago.
+     */
     public PanelPagar panelPagar;
+
+    /**
+     * Panel que muestra los productos para compartir.
+     */
     public PanelParaCompartir panelParaCompartir;
-    
-    
+
+    /**
+     * Constructor que inicializa la ventana principal y sus paneles.
+     *
+     * @param controlGrafico Controlador gráfico encargado de la lógica de UI.
+     */
     public VentanaPrincipal(ControlGrafico controlGrafico) {
         this.controlGrafico = controlGrafico;
         initComponents();
@@ -36,25 +68,37 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.setVisible(false);
     }
 
-    
-    
-    
+    /**
+     * Muestra en la ventana principal el panel especificado.
+     *
+     * @param panel Panel a mostrar en la ventana.
+     */
     public void mostrarPanel(JPanel panel) {
         setContentPane(panel);
-        pack(); // Ajusta el tamaño de la ventana dependiendo del panel que le pasamos como argumento
-        setLocationRelativeTo(null); // Centra la ventana en la mitad de la pantalla
+        pack(); // Ajusta el tamaño de la ventana según el contenido
+        setLocationRelativeTo(null); // Centra la ventana en la pantalla
         revalidate();
         repaint();
     }
-    
-    public void mostrarMensajeExito(String mensaje){
-        JOptionPane.showMessageDialog(this, mensaje, "Exito", JOptionPane.INFORMATION_MESSAGE);
+
+    /**
+     * Muestra un cuadro de diálogo con un mensaje de éxito.
+     *
+     * @param mensaje Mensaje a mostrar al usuario.
+     */
+    public void mostrarMensajeExito(String mensaje) {
+        JOptionPane.showMessageDialog(this, mensaje, "Éxito", JOptionPane.INFORMATION_MESSAGE);
     }
-    
-    public void mostrarMensajeError(String mensaje){
+
+    /**
+     * Muestra un cuadro de diálogo con un mensaje de error.
+     *
+     * @param mensaje Mensaje a mostrar al usuario.
+     */
+    public void mostrarMensajeError(String mensaje) {
         JOptionPane.showMessageDialog(this, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

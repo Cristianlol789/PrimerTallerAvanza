@@ -5,7 +5,7 @@
 package edu.progAvUD.taller1.vista;
 
 /**
- *
+ *Se encarga de mostrar todo lo relacionado con el menu para compartir
  * @author Andres Felipe
  */
 public class PanelParaCompartir extends javax.swing.JPanel {
@@ -17,6 +17,9 @@ public class PanelParaCompartir extends javax.swing.JPanel {
         initComponents();
     }
 
+    /**
+     * Limpia los campos ya rellenados
+     */
     public void limpiarCampos() {
 
         // Reiniciar JSpinner

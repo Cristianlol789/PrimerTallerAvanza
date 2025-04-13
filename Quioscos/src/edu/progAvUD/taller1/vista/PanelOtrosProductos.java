@@ -5,7 +5,7 @@
 package edu.progAvUD.taller1.vista;
 
 /**
- *
+ * Se encarga de mostrar lo relacionado solo con una unidad de producto
  * @author Andres Felipe
  */
 public class PanelOtrosProductos extends javax.swing.JPanel {
@@ -17,6 +17,9 @@ public class PanelOtrosProductos extends javax.swing.JPanel {
         initComponents();
     }
 
+    /**
+     *Limpia los campos ya rellenados
+     */
     public void limpiarCampos() {
         // Limpiar JComboBox
         jComboBoxCoccionAla.setSelectedIndex(0);

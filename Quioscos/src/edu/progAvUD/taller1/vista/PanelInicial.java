@@ -5,7 +5,7 @@
 package edu.progAvUD.taller1.vista;
 
 /**
- *
+ * Se encarga mostrar la ejecucion para que la persona elija si comer aqui o para llevar
  * @author Andres Felipe
  */
 public class PanelInicial extends javax.swing.JPanel {
@@ -17,6 +17,9 @@ public class PanelInicial extends javax.swing.JPanel {
         initComponents();
     }
 
+    /**
+     *Limpia los campos ya rellenados
+     */
     public void limpiarCampos() {
         buttonGroupTipoPedido.clearSelection();
     }

@@ -58,6 +58,7 @@ public class ControlOpcionesMenu {
      * @param precio1 Precio del primer producto adicional.
      * @param puntosEquivalentes1 Puntos equivalentes del primer producto
      * adicional.
+     * @param identificador1
      * @param tipo2 Tipo del segundo producto adicional (usado en Combo o
      * ParaCompartir).
      * @param coccion2 Estado o método de cocción del segundo producto
@@ -69,12 +70,14 @@ public class ControlOpcionesMenu {
      * adicional.
      * @param tipo3 Tipo del tercer producto adicional (usado en Combo o
      * ParaCompartir4).
+     * @param identificador2
      * @param coccion3 Estado o método de cocción del tercer producto adicional.
      * @param nombre3 Nombre del tercer producto adicional.
      * @param descripcion3 Descripción del tercer producto adicional.
      * @param precio3 Precio del tercer producto adicional.
      * @param puntosEquivalentes3 Puntos equivalentes del tercer producto
      * adicional.
+     * @param identificador3
      * @param agrandados Opciones que indican los productos que pueden ser
      * agrandados (para el Combo).
      * @param adiciones Lista de adiciones disponibles para el menú (para el
@@ -83,6 +86,10 @@ public class ControlOpcionesMenu {
      * crear ("Bucket", "Combo", "ParaCompartir3", "ParaCompartir4" o "Unidad").
      * @param cantidadMenuComprado Cantidad de veces que se ha adquirido este
      * menú.
+     * @param cantidadPresasCuadro
+     * @param cantidadPresasAla
+     * @param cantidadPresasPierna
+     * @param cantidadPresasPechuga
      */
     public void crearMenu(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, String identificador1, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, String identificador2, String tipo3, String coccion3, String nombre3, String descripcion3, double precio3, double puntosEquivalentes3, String identificador3, HashMap<String, Boolean> agrandados, ArrayList<String> adiciones, String identificadorMenu, int cantidadPresasAla, int cantidadMenuComprado, int cantidadPresasPierna, int cantidadPresasCuadro, int cantidadPresasPechuga) {
         ControlProducto controlProducto = controlprincipal.getControlProductos();
@@ -161,6 +168,10 @@ public class ControlOpcionesMenu {
         return precioTotalPedido;
     }
 
+    /**
+     *
+     * @return
+     */
     public Object[][] enviarDatosTablaPedido() {
         int cantidadProductos = opcionesMenu.size();
         Object[][] datos = new Object[cantidadProductos][4];

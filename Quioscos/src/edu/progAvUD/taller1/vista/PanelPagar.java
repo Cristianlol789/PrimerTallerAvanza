@@ -7,7 +7,7 @@ package edu.progAvUD.taller1.vista;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
+ * Se encarga de mostrar cuanto se debe pagar 
  * @author Andres Felipe
  */
 public class PanelPagar extends javax.swing.JPanel {
@@ -19,12 +19,19 @@ public class PanelPagar extends javax.swing.JPanel {
         initComponents();
     }
 
+    /**
+     *Limpia los campos ya rellenados
+     */
     public void limpiarCampos() {
         jTextFieldCedula.setText("");
         jTextFieldTotalPagar.setText("");
         modeloTablaProductos.setRowCount(0); // Limpia la tabla si es necesario
     }
 
+    /**
+     * Muestra en una tabla lo que la persona va comprando
+     * @param datosProductos es el arreglo que trae estos datos
+     */
     public void CargarDatosPedido(Object[][] datosProductos) {
         modeloTablaProductos.setRowCount(0); // Limpia las filas anteriores
         for (Object[] fila : datosProductos) {

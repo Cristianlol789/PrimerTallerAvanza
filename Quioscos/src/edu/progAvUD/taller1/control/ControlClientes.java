@@ -149,11 +149,12 @@ public class ControlClientes {
      * cultura, esto se hace con el objetivo de poder saber si aplica o no para
      * un descuento
      *
+     * @param cedula parametro identificador
      * @return retorna si pertenece o no a una cultura
      */
-    public boolean tieneCultura() {
+    public boolean tieneCultura(double cedula) {
         for (Cliente cliente : clientes) {
-            if (cliente.getCedula() == 0){
+            if (cliente.getCedula() == cedula){
                 if (cliente.getCultura() != null) {
                     return true;
                 }
