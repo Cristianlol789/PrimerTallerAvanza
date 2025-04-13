@@ -101,7 +101,7 @@ public class PanelCombos extends javax.swing.JPanel {
         jLabel67 = new javax.swing.JLabel();
         jTextFieldPrecioGaseosa = new javax.swing.JTextField();
         jLabel69 = new javax.swing.JLabel();
-        jComboBocSaborGaseosa = new javax.swing.JComboBox<>();
+        jComboBoxSaborGaseosa = new javax.swing.JComboBox<>();
         jLabel70 = new javax.swing.JLabel();
         jComboBoxAgrandadoGaseosa = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
@@ -133,9 +133,17 @@ public class PanelCombos extends javax.swing.JPanel {
         jLabel87 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jComboBoxCoccionStrips = new javax.swing.JComboBox<>();
-        jComboBoxAgrandadoStrips = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
+        jCheckBoxQuesoAdicion = new javax.swing.JCheckBox();
+        jCheckBoxSalsaPicanteAdicion = new javax.swing.JCheckBox();
+        jCheckBoxChipsAdicion = new javax.swing.JCheckBox();
+        jCheckBoxArrozAdicion = new javax.swing.JCheckBox();
+        jCheckBoxJalapeñosAdicion = new javax.swing.JCheckBox();
+        jCheckBoxSalsaBbqAdicion = new javax.swing.JCheckBox();
+        jCheckBoxSourCreamAdicion = new javax.swing.JCheckBox();
+        jCheckBoxTocinoAdicion = new javax.swing.JCheckBox();
 
         setPreferredSize(new java.awt.Dimension(1115, 500));
         setLayout(new java.awt.BorderLayout());
@@ -613,8 +621,8 @@ public class PanelCombos extends javax.swing.JPanel {
                 .addComponent(jLabel24)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
-                    .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE))
+                    .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, 319, Short.MAX_VALUE)
+                    .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, 319, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -639,11 +647,11 @@ public class PanelCombos extends javax.swing.JPanel {
 
         jLabel69.setText("Una Gaseosa para acompañar tu combo");
 
-        jComboBocSaborGaseosa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cola", "Naranja", "Limón", "Uva" }));
+        jComboBoxSaborGaseosa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cola", "Naranja", "Limón", "Uva" }));
 
         jLabel70.setText("Sabor Gaseosa");
 
-        jComboBoxAgrandadoGaseosa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sí", "No" }));
+        jComboBoxAgrandadoGaseosa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No", "Sí" }));
 
         jLabel2.setText("¿Agrandado?");
 
@@ -670,7 +678,7 @@ public class PanelCombos extends javax.swing.JPanel {
                                 .addGap(53, 53, 53)
                                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextFieldPrecioGaseosa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBocSaborGaseosa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBoxSaborGaseosa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jComboBoxAgrandadoGaseosa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(15, 15, 15))))
             .addGroup(jPanel25Layout.createSequentialGroup()
@@ -693,7 +701,7 @@ public class PanelCombos extends javax.swing.JPanel {
                     .addComponent(jTextFieldPrecioGaseosa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBocSaborGaseosa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxSaborGaseosa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel70))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -752,7 +760,7 @@ public class PanelCombos extends javax.swing.JPanel {
 
         jComboBoxCoccionPapas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normales", "Crocantes", "Ultra Crocantes" }));
 
-        jComboBoxAgrandadoPapas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sí", "No" }));
+        jComboBoxAgrandadoPapas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No", "Sí" }));
 
         jLabel6.setText("¿Agrandado?");
 
@@ -844,7 +852,7 @@ public class PanelCombos extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel26)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)
+                .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, 314, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -873,10 +881,6 @@ public class PanelCombos extends javax.swing.JPanel {
 
         jComboBoxCoccionStrips.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Crispy", "Mixto", "Original" }));
 
-        jComboBoxAgrandadoStrips.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sí", "No" }));
-
-        jLabel7.setText("¿Agrandado?");
-
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
         jPanel31Layout.setHorizontalGroup(
@@ -889,20 +893,14 @@ public class PanelCombos extends javax.swing.JPanel {
                         .addGap(199, 199, 199))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel31Layout.createSequentialGroup()
                         .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel31Layout.createSequentialGroup()
-                                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel87))
-                                .addGap(53, 53, 53)
-                                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jTextFieldPrecioStrips, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jComboBoxEspecieStrips, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jComboBoxCoccionStrips, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel31Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(53, 53, 53)
-                                .addComponent(jComboBoxAgrandadoStrips, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel87))
+                        .addGap(53, 53, 53)
+                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jTextFieldPrecioStrips, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jComboBoxEspecieStrips, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBoxCoccionStrips, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(15, 15, 15))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel31Layout.createSequentialGroup()
                         .addComponent(jPanel32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -935,29 +933,95 @@ public class PanelCombos extends javax.swing.JPanel {
                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jComboBoxCoccionStrips, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxAgrandadoStrips, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel27.setText("Strips");
 
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel28.setText("Productos Adicionales");
+
+        jCheckBoxQuesoAdicion.setText("Extra Queso");
+
+        jCheckBoxSalsaPicanteAdicion.setText("Salsa Picante");
+
+        jCheckBoxChipsAdicion.setText("Chips Adicinales");
+
+        jCheckBoxArrozAdicion.setText("Porcion de arroz");
+
+        jCheckBoxJalapeñosAdicion.setText("Jalapeños");
+
+        jCheckBoxSalsaBbqAdicion.setText("Salsa BBQ");
+
+        jCheckBoxSourCreamAdicion.setText("Sour cream");
+
+        jCheckBoxTocinoAdicion.setText("Tocino");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(235, 235, 235)
+                .addComponent(jLabel28)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBoxQuesoAdicion)
+                    .addComponent(jCheckBoxTocinoAdicion))
+                .addGap(65, 65, 65)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBoxSalsaPicanteAdicion)
+                    .addComponent(jCheckBoxJalapeñosAdicion))
+                .addGap(76, 76, 76)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBoxSalsaBbqAdicion)
+                    .addComponent(jCheckBoxChipsAdicion))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBoxArrozAdicion)
+                    .addComponent(jCheckBoxSourCreamAdicion))
+                .addGap(33, 33, 33))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBoxQuesoAdicion)
+                    .addComponent(jCheckBoxSalsaPicanteAdicion)
+                    .addComponent(jCheckBoxChipsAdicion)
+                    .addComponent(jCheckBoxArrozAdicion))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBoxJalapeñosAdicion)
+                    .addComponent(jCheckBoxSalsaBbqAdicion)
+                    .addComponent(jCheckBoxSourCreamAdicion)
+                    .addComponent(jCheckBoxTocinoAdicion))
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(191, 191, 191))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel27)
-                        .addGap(306, 306, 306))))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                                .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(191, 191, 191))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel27)
+                                .addGap(306, 306, 306))))
+                    .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -965,8 +1029,10 @@ public class PanelCombos extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel27)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -974,16 +1040,16 @@ public class PanelCombos extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(70, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1008,10 +1074,16 @@ public class PanelCombos extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     public javax.swing.JButton jButtonAgregarPedidoCombo;
-    public javax.swing.JComboBox<String> jComboBocSaborGaseosa;
+    public javax.swing.JCheckBox jCheckBoxArrozAdicion;
+    public javax.swing.JCheckBox jCheckBoxChipsAdicion;
+    public javax.swing.JCheckBox jCheckBoxJalapeñosAdicion;
+    public javax.swing.JCheckBox jCheckBoxQuesoAdicion;
+    public javax.swing.JCheckBox jCheckBoxSalsaBbqAdicion;
+    public javax.swing.JCheckBox jCheckBoxSalsaPicanteAdicion;
+    public javax.swing.JCheckBox jCheckBoxSourCreamAdicion;
+    public javax.swing.JCheckBox jCheckBoxTocinoAdicion;
     public javax.swing.JComboBox<String> jComboBoxAgrandadoGaseosa;
     public javax.swing.JComboBox<String> jComboBoxAgrandadoPapas;
-    public javax.swing.JComboBox<String> jComboBoxAgrandadoStrips;
     public javax.swing.JComboBox<String> jComboBoxCoccionNuggets;
     public javax.swing.JComboBox<String> jComboBoxCoccionPapas;
     public javax.swing.JComboBox<String> jComboBoxCoccionPresa;
@@ -1022,6 +1094,7 @@ public class PanelCombos extends javax.swing.JPanel {
     public javax.swing.JComboBox<String> jComboBoxProteinaHamburguesa;
     public javax.swing.JComboBox<String> jComboBoxProteinaWraps;
     public javax.swing.JComboBox<String> jComboBoxQuesoWraps;
+    public javax.swing.JComboBox<String> jComboBoxSaborGaseosa;
     public javax.swing.JComboBox<String> jComboBoxTipoNuggets;
     public javax.swing.JComboBox<String> jComboBoxTipoPapas;
     private javax.swing.JLabel jLabel1;
@@ -1037,6 +1110,7 @@ public class PanelCombos extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel45;
@@ -1062,7 +1136,6 @@ public class PanelCombos extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel69;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
@@ -1101,6 +1174,7 @@ public class PanelCombos extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     public javax.swing.JRadioButton jRadioButtonHamburguesa;
     public javax.swing.JRadioButton jRadioButtonNuggets;
     public javax.swing.JRadioButton jRadioButtonPresa;
