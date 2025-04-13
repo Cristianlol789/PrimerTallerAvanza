@@ -65,19 +65,42 @@ public class ControlPrincipal {
      * Crea un menú de tipo "Bucket" utilizando los parámetros de configuración
      * para el menú
      *
-     * @param nombreMenu Nombre del menú principal.
+     * @param nombreMenu Nombre del menú tipo Bucket.
      * @param precioTotalMenu Precio total del menú.
-     * @param puntosEquivalentesMenu Puntos o equivalencia en puntos del menú.
-     * @param tipo Tipo del producto (puede representar la categoría o clase).
-     * @param coccion Tipo de cocción o preparación.
-     * @param nombre Nombre del producto en el menú.
-     * @param descripcion Descripción del producto.
-     * @param precio Precio individual del producto.
-     * @param puntosEquivalentes Puntos equivalentes para el producto.
-     * @param cantidadPresas Cantidad de presas o unidades del producto que se
-     * incluyen
-     * @param cantidadMenuComprado la cantidad de compra iguales a esta que hizo
-     * la persona
+     * @param puntosEquivalentesMenu Puntos equivalentes otorgados por el menú.
+     * @param tipo Tipo del primer producto.
+     * @param coccion Tipo de cocción del primer producto.
+     * @param nombre Nombre del primer producto.
+     * @param descripcion Descripción del primer producto.
+     * @param precio Precio del primer producto.
+     * @param puntosEquivalentes Puntos equivalentes del primer producto.
+     * @param identificador Identificador común para todos los productos del
+     * bucket.
+     * @param cantidadPresasAla Cantidad de presas tipo ala en el bucket.
+     * @param tipo1 Tipo del segundo producto.
+     * @param coccion1 Tipo de cocción del segundo producto.
+     * @param nombre1 Nombre del segundo producto.
+     * @param descripcion1 Descripción del segundo producto.
+     * @param precio1 Precio del segundo producto.
+     * @param puntosEquivalentes1 Puntos equivalentes del segundo producto.
+     * @param cantidadPresasPierna Cantidad de presas tipo pierna en el bucket.
+     * @param tipo2 Tipo del tercer producto.
+     * @param coccion2 Tipo de cocción del tercer producto.
+     * @param nombre2 Nombre del tercer producto.
+     * @param descripcion2 Descripción del tercer producto.
+     * @param precio2 Precio del tercer producto.
+     * @param puntosEquivalentes2 Puntos equivalentes del tercer producto.
+     * @param cantidadPresasCuadro Cantidad de presas tipo cuadro en el bucket.
+     * @param tipo3 Tipo del cuarto producto.
+     * @param coccion3 Tipo de cocción del cuarto producto.
+     * @param nombre3 Nombre del cuarto producto.
+     * @param descripcion3 Descripción del cuarto producto.
+     * @param precio3 Precio del cuarto producto.
+     * @param puntosEquivalentes3 Puntos equivalentes del cuarto producto.
+     * @param cantidadPresasPechuga Cantidad de presas tipo pechuga en el
+     * bucket.
+     * @param cantidadMenuComprado Número de veces que se compró este menú
+     * (cantidad total del combo).
      */
     public void crearBucket(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, int cantidadPresasAla, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, int cantidadPresasPierna, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, int cantidadPresasCuadro, String tipo3, String coccion3, String nombre3, String descripcion3, double precio3, double puntosEquivalentes3, int cantidadPresasPechuga, int cantidadMenuComprado) {
         String identificicadorMenu = "Bucket";

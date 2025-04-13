@@ -190,16 +190,16 @@ public class ControlGrafico implements ActionListener {
         String coccionCuadrito = (String) ventanaPrincipal.panelBuckets.jComboBoxCoccionCuadrito.getSelectedItem();
 
         
-        double TotalBucket = (preciosPaneles.get("Ala") * unidadesAla) + (preciosPaneles.get("Pechuga") * unidadesPechuga) + ((preciosPaneles.get("Pierna") * unidadesPierna) + (preciosPaneles.get("Cuadrito") * unidadesCuadrito));
+        double totalBucket = (preciosPaneles.get("Ala") * unidadesAla) + (preciosPaneles.get("Pechuga") * unidadesPechuga) + ((preciosPaneles.get("Pierna") * unidadesPierna) + (preciosPaneles.get("Cuadrito") * unidadesCuadrito));
         
         if ((unidadesAla + unidadesPechuga + unidadesPierna + unidadesCuadrito) > 8) {
             ventanaPrincipal.mostrarMensajeError("El bucket tiene mas de 8 presas");
         } else {
-            controlPrincipal.crearBucket("Bucket Personal", TotalBucket, TotalBucket, 
-                    "Pierna", coccionPierna, "Presa de pollo", "Pierna de Pollo apanada al estilo FormFood", preciosPaneles.get("Pierna"), preciosPaneles.get("Pierna"), "PresaPollo", unidadesPierna, 
-                    "Pechuga", coccionPechuga, "Presa de pollo", "Pechuga de Pollo apanada al estilo FormFood", preciosPaneles.get("Pechuga"),  preciosPaneles.get("Pechuga"), unidadesPechuga, 
-                    "Ala", coccionAla, "Presa de pollo", "Ala de Pollo apanada al estilo FormFood",  preciosPaneles.get("Pechuga"),  preciosPaneles.get("Pechuga"), unidadesAla, 
+            controlPrincipal.crearBucket("Bucket Personal", totalBucket, totalBucket, 
+                    "Ala", coccionAla, "Presa de pollo", "Ala de Pollo apanada al estilo FormFood",  preciosPaneles.get("Ala"),  preciosPaneles.get("Ala"), "presaPollo", unidadesAla, 
+                    "Pierna", coccionPierna, "Presa de pollo", "Pierna de Pollo apanada al estilo FormFood", preciosPaneles.get("Pierna"), preciosPaneles.get("Pierna"), unidadesPierna, 
                     "Cuadrito", coccionCuadrito, "Presa de pollo", "Cuadrito de Pollo apanado al estilo FormFood", preciosPaneles.get("Cuadritos"), preciosPaneles.get("Cuadritos"), unidadesCuadrito,
+                    "Pechuga", coccionPechuga, "Presa de pollo", "Pechuga de Pollo apanada al estilo FormFood", preciosPaneles.get("Pechuga"),  preciosPaneles.get("Pechuga"), unidadesPechuga, 
                     unidadesBucket);
             ventanaPrincipal.mostrarMensajeExito("Se ha añadido correctamente el bucket al pedido");
         }
