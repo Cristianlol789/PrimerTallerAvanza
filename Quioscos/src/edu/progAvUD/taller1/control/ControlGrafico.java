@@ -56,6 +56,11 @@ public class ControlGrafico implements ActionListener {
         ventanaPrincipal.panelCombos.jButtonAgregarPedidoCombo.addActionListener(this);
         ventanaPrincipal.panelParaCompartir.jButtonAgragarPedidoCompartir.addActionListener(this);
         ventanaPrincipal.panelOtrosProductos.jButtonAgragarPedidoProducto.addActionListener(this);
+        
+        ActionListener actionListener = e -> actualizarPrecioTotalCombo();
+        
+        ventanaPrincipal.panelCombos.jComboBoxAgrandadoGaseosa.addActionListener(actionListener);
+        ventanaPrincipal.panelCombos.jComboBoxAgrandadoPapas.addActionListener(actionListener);
 
         actualizarPrecioTotalBucket();
         actualizarPrecioTotalCombo();
@@ -89,7 +94,7 @@ public class ControlGrafico implements ActionListener {
                 ventanaPrincipal.repaint();
                 ventanaPrincipal.revalidate();
                 ventanaPrincipal.jMenuPagar.setVisible(false);
-            } else if(ventanaPrincipal.panelInicial.jRadioButtonLlevar.isSelected()) {
+            } else if (ventanaPrincipal.panelInicial.jRadioButtonLlevar.isSelected()) {
                 ventanaPrincipal.mostrarMensajeError("Seccion en desarrollo. Gracias por su paciencia");
             }
         }
@@ -114,7 +119,7 @@ public class ControlGrafico implements ActionListener {
         if (e.getSource() == ventanaPrincipal.panelBuckets.jButtonAgregarPedidoBucket) {
             cargarBucket();
             ventanaPrincipal.panelBuckets.limpiarCampos();
-            
+
         }
         if (e.getSource() == ventanaPrincipal.panelCombos.jButtonAgregarPedidoCombo) {
             cargarCombo();
@@ -127,7 +132,6 @@ public class ControlGrafico implements ActionListener {
         if (e.getSource() == ventanaPrincipal.panelOtrosProductos.jButtonAgragarPedidoProducto) {
             cargarUnidad();
             ventanaPrincipal.panelOtrosProductos.limpiarCampos();
-            
         }
     }
 
@@ -448,49 +452,11 @@ public class ControlGrafico implements ActionListener {
         }
     }
 
-    public void actualizarPrecioTotalCombo() {
+    public void actualizarPrecioTotalComboChangeListener() {
         //Método para actualizar el texto del JTextField de PrecioTotal del Combo
         ChangeListener listenerToltalCombo = new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
-                int cantidadAdiciones = (int) Arrays.asList(
-                        ventanaPrincipal.panelCombos.jCheckBoxQuesoAdicion,
-                        ventanaPrincipal.panelCombos.jCheckBoxSalsaPicanteAdicion,
-                        ventanaPrincipal.panelCombos.jCheckBoxChipsAdicion,
-                        ventanaPrincipal.panelCombos.jCheckBoxArrozAdicion,
-                        ventanaPrincipal.panelCombos.jCheckBoxTocinoAdicion,
-                        ventanaPrincipal.panelCombos.jCheckBoxJalapeñosAdicion,
-                        ventanaPrincipal.panelCombos.jCheckBoxSalsaBbqAdicion,
-                        ventanaPrincipal.panelCombos.jCheckBoxSourCreamAdicion
-                ).stream()
-                        .filter(JCheckBox::isSelected)
-                        .count();
-
-                int cantidadAgrandados = 0;
-                if (!"No".equals(ventanaPrincipal.panelCombos.jComboBoxAgrandadoGaseosa.getSelectedItem())) {
-                    cantidadAgrandados++;
-                }
-                if (!"No".equals(ventanaPrincipal.panelCombos.jComboBoxAgrandadoPapas.getSelectedItem())) {
-                    cantidadAgrandados++;
-                }
-
-                double TotalCombo = preciosPaneles.get("Bebida")
-                        + preciosPaneles.get("Papas")
-                        + preciosPaneles.get("Strips")
-                        + (5000 * cantidadAdiciones)
-                        + (2000 * cantidadAgrandados);
-
-                if (ventanaPrincipal.panelCombos.jRadioButtonPresa.isSelected()) {
-                    TotalCombo += preciosPaneles.get("Presa");
-                } else if (ventanaPrincipal.panelCombos.jRadioButtonNuggets.isSelected()) {
-                    TotalCombo += preciosPaneles.get("Nuggets");
-                } else if (ventanaPrincipal.panelCombos.jRadioButtonHamburguesa.isSelected()) {
-                    TotalCombo += preciosPaneles.get("Hamburguesa");
-                } else if (ventanaPrincipal.panelCombos.jRadioButtonWraps.isSelected()) {
-                    TotalCombo += preciosPaneles.get("Wraps");
-                }
-
-                ventanaPrincipal.panelCombos.jTextFieldPrecioTotalCombo.setText("$ " + TotalCombo);
-
+                actualizarPrecioTotalCombo();
             }
         };
 
@@ -508,8 +474,49 @@ public class ControlGrafico implements ActionListener {
         ventanaPrincipal.panelCombos.jCheckBoxSourCreamAdicion.addChangeListener(listenerToltalCombo);
         ventanaPrincipal.panelCombos.jCheckBoxTocinoAdicion.addChangeListener(listenerToltalCombo);
     }
-    
-    public void actualizarPrecioTotalBucket(){
+
+    public void actualizarPrecioTotalCombo() {
+        int cantidadAdiciones = (int) Arrays.asList(
+                ventanaPrincipal.panelCombos.jCheckBoxQuesoAdicion,
+                ventanaPrincipal.panelCombos.jCheckBoxSalsaPicanteAdicion,
+                ventanaPrincipal.panelCombos.jCheckBoxChipsAdicion,
+                ventanaPrincipal.panelCombos.jCheckBoxArrozAdicion,
+                ventanaPrincipal.panelCombos.jCheckBoxTocinoAdicion,
+                ventanaPrincipal.panelCombos.jCheckBoxJalapeñosAdicion,
+                ventanaPrincipal.panelCombos.jCheckBoxSalsaBbqAdicion,
+                ventanaPrincipal.panelCombos.jCheckBoxSourCreamAdicion
+        ).stream()
+                .filter(JCheckBox::isSelected)
+                .count();
+
+        int cantidadAgrandados = 0;
+        if (!"No".equals(ventanaPrincipal.panelCombos.jComboBoxAgrandadoGaseosa.getSelectedItem())) {
+            cantidadAgrandados++;
+        }
+        if (!"No".equals(ventanaPrincipal.panelCombos.jComboBoxAgrandadoPapas.getSelectedItem())) {
+            cantidadAgrandados++;
+        }
+
+        double TotalCombo = preciosPaneles.get("Bebida")
+                + preciosPaneles.get("Papas")
+                + preciosPaneles.get("Strips")
+                + (5000 * cantidadAdiciones)
+                + (2000 * cantidadAgrandados);
+
+        if (ventanaPrincipal.panelCombos.jRadioButtonPresa.isSelected()) {
+            TotalCombo += preciosPaneles.get("Presa");
+        } else if (ventanaPrincipal.panelCombos.jRadioButtonNuggets.isSelected()) {
+            TotalCombo += preciosPaneles.get("Nuggets");
+        } else if (ventanaPrincipal.panelCombos.jRadioButtonHamburguesa.isSelected()) {
+            TotalCombo += preciosPaneles.get("Hamburguesa");
+        } else if (ventanaPrincipal.panelCombos.jRadioButtonWraps.isSelected()) {
+            TotalCombo += preciosPaneles.get("Wraps");
+        }
+
+        ventanaPrincipal.panelCombos.jTextFieldPrecioTotalCombo.setText("$ " + TotalCombo);
+    }
+
+    public void actualizarPrecioTotalBucket() {
         // Método para actualizar el texto del JTextField de PrecioTotal del Bucket
         ChangeListener listenerToltalBucket = new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
