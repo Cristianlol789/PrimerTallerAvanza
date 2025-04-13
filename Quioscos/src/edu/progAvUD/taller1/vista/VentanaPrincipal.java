@@ -1,8 +1,15 @@
 package edu.progAvUD.taller1.vista;
 
 import edu.progAvUD.taller1.control.ControlGrafico;
+import java.awt.Font;
+import java.util.Timer;
+import java.util.TimerTask;
+import javax.swing.BorderFactory;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 /**
  * Representa la ventana principal de la aplicación gráfica. Controla y gestiona
@@ -113,6 +120,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 opciones[0]
         );
         return seleccion;
+    }
+
+    public void realizandoPago() {
+        JDialog dialogo = new JDialog();
+        dialogo.setUndecorated(true); // Sin barra de título ni botones
+        dialogo.setAlwaysOnTop(true); // Que esté siempre encima
+        dialogo.setModal(true); // Bloquea otros eventos
+
+        JLabel label = new JLabel("Se está haciendo el pago...", SwingConstants.CENTER);
+        label.setFont(new Font("Arial", Font.PLAIN, 16));
+        label.setBorder(BorderFactory.createEmptyBorder(20, 40, 20, 40));
+
+        dialogo.getContentPane().add(label);
+        dialogo.pack();
+        dialogo.setLocationRelativeTo(null);
+
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            public void run() {
+                dialogo.dispose();
+            }
+        }, 10000); 
+
+        dialogo.setVisible(true); 
     }
 
     /**
