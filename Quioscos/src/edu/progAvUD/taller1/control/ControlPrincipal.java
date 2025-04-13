@@ -183,11 +183,11 @@ public class ControlPrincipal {
      * @param identificador2 Identificador del tercer componente.
      * @param cantidadMenuComprado Cantidad asociada al menú
      */
-    public void crearParaCompartir3(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, String identificador1, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, String identificador2, int cantidadMenuComprado) {
+    public void crearParaCompartir3(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, String identificador1, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, String identificador2, int cantidadMenuComprado, int cantidadProducto, int cantidadProducto1, int cantidadProducto2) {
         String identificadorMenu = "ParaCompartir3";
         HashMap<String, Boolean> agrandados = new HashMap<>();
         ArrayList<String> adiciones = new ArrayList<>();
-        controlOpcionesMenu.crearMenu(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, agrandados, adiciones, identificadorMenu, 0, cantidadMenuComprado, 0, 0, 0);
+        controlOpcionesMenu.crearMenu(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, agrandados, adiciones, identificadorMenu, cantidadProducto, cantidadMenuComprado, cantidadProducto1, cantidadProducto2, 0);
     }
 
     /**
@@ -227,11 +227,11 @@ public class ControlPrincipal {
      * @param cantidadMenuComprado Indica la cantidad o medida del menú
      * comprado.
      */
-    public void crearParaCompartir4(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, String identificador1, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, String identificador2, String tipo3, String coccion3, String nombre3, String descripcion3, double precio3, double puntosEquivalentes3, String identificador3, int cantidadMenuComprado) {
+    public void crearParaCompartir4(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, String identificador1, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, String identificador2, String tipo3, String coccion3, String nombre3, String descripcion3, double precio3, double puntosEquivalentes3, String identificador3, int cantidadMenuComprado, int cantidadProducto, int cantidadProducto1, int cantidadProducto2, int cantidadProducto3) {
         String identificadorMenu = "ParaCompartir4";
         HashMap<String, Boolean> agrandados = new HashMap<>();
         ArrayList<String> adiciones = new ArrayList<>();
-        controlOpcionesMenu.crearMenu(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, tipo3, coccion3, nombre3, descripcion3, precio3, puntosEquivalentes3, identificador3, agrandados, adiciones, identificadorMenu, 0, cantidadMenuComprado, 0, 0, 0);
+        controlOpcionesMenu.crearMenu(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, tipo3, coccion3, nombre3, descripcion3, precio3, puntosEquivalentes3, identificador3, agrandados, adiciones, identificadorMenu, cantidadProducto, cantidadMenuComprado, cantidadProducto1, cantidadProducto2, cantidadProducto3);
     }
 
     /**
@@ -254,7 +254,7 @@ public class ControlPrincipal {
         String identificadorMenu = "Unidad";
         HashMap<String, Boolean> agrandados = new HashMap<>();
         ArrayList<String> adiciones = new ArrayList<>();
-        controlOpcionesMenu.crearMenu(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, agrandados, adiciones, identificadorMenu, cantidadMenuComprado, cantidadMenuComprado, 0, 0, 0);
+        controlOpcionesMenu.crearMenu(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, agrandados, adiciones, identificadorMenu, 0, cantidadMenuComprado, 0, 0, 0);
     }
 
     /**

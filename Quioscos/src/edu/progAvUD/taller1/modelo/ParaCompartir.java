@@ -1,6 +1,7 @@
 package edu.progAvUD.taller1.modelo;
 
 import edu.progAvUD.taller1.control.ControlProducto;
+import java.util.HashMap;
 
 /**
  * Representa una opción de menú tipo "Para Compartir", compuesta por varios
@@ -18,7 +19,7 @@ public class ParaCompartir extends OpcionesMenu {
     /**
      * Arreglo de productos que conforman el menú para compartir.
      */
-    private Producto[] producto;
+    private HashMap<Producto, Integer> producto;
 
     /**
      * Constructor que permite crear un menú para compartir con 3 productos.
@@ -49,12 +50,12 @@ public class ParaCompartir extends OpcionesMenu {
      * @param identificador2 identificador del tercer producto
      * @param controlProducto controlador para crear productos
      */
-    public ParaCompartir(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, String identificador1, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, String identificador2, ControlProducto controlProducto) {
+    public ParaCompartir(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, String identificador1, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, String identificador2, ControlProducto controlProducto, int cantidadProducto, int cantidadProducto1, int cantidadProducto2) {
         super(nombreMenu, precioTotalMenu, puntosEquivalentesMenu);
-        this.producto = new Producto[3];
-        this.producto[0] = controlProducto.crearProducto(tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador);
-        this.producto[1] = controlProducto.crearProducto(tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1);
-        this.producto[2] = controlProducto.crearProducto(tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2);
+        this.producto = new HashMap<>();
+        producto.put(controlProducto.crearProducto(tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador), cantidadProducto);
+        producto.put(controlProducto.crearProducto(tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1), cantidadProducto1);
+        producto.put(controlProducto.crearProducto(tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2), cantidadProducto2);
     }
 
     /**
@@ -93,30 +94,20 @@ public class ParaCompartir extends OpcionesMenu {
      * @param identificador3 identificador del tercer producto
      * @param controlProducto controlador para crear productos
      */
-    public ParaCompartir(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, String identificador1, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, String identificador2, String tipo3, String coccion3, String nombre3, String descripcion3, double precio3, double puntosEquivalentes3, String identificador3, ControlProducto controlProducto) {
+    public ParaCompartir(String nombreMenu, double precioTotalMenu, double puntosEquivalentesMenu, String tipo, String coccion, String nombre, String descripcion, double precio, double puntosEquivalentes, String identificador, String tipo1, String coccion1, String nombre1, String descripcion1, double precio1, double puntosEquivalentes1, String identificador1, String tipo2, String coccion2, String nombre2, String descripcion2, double precio2, double puntosEquivalentes2, String identificador2, String tipo3, String coccion3, String nombre3, String descripcion3, double precio3, double puntosEquivalentes3, String identificador3, ControlProducto controlProducto, int cantidadProducto, int cantidadProducto1, int cantidadProducto2, int cantidadProducto3) {
         super(nombreMenu, precioTotalMenu, puntosEquivalentesMenu);
-        this.producto = new Producto[4];
-        this.producto[0] = controlProducto.crearProducto(tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador);
-        this.producto[1] = controlProducto.crearProducto(tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1);
-        this.producto[2] = controlProducto.crearProducto(tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2);
-        this.producto[3] = controlProducto.crearProducto(tipo3, coccion3, nombre3, descripcion3, precio3, puntosEquivalentes3, identificador3);
+        this.producto = new HashMap<>();
+        producto.put(controlProducto.crearProducto(tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador), cantidadProducto);
+        producto.put(controlProducto.crearProducto(tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1), cantidadProducto1);
+        producto.put(controlProducto.crearProducto(tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2), cantidadProducto2);
+        producto.put(controlProducto.crearProducto(tipo3, coccion3, nombre3, descripcion3, precio3, puntosEquivalentes3, identificador3), cantidadProducto3);
     }
 
-    /**
-     * Obtiene el arreglo de productos del menú para compartir.
-     *
-     * @return arreglo de productos
-     */
-    public Producto[] getProducto() {
+    public HashMap<Producto, Integer> getProducto() {
         return producto;
     }
 
-    /**
-     * Establece el arreglo de productos del menú para compartir.
-     *
-     * @param producto nuevo arreglo de productos
-     */
-    public void setProducto(Producto[] producto) {
+    public void setProducto(HashMap<Producto, Integer> producto) {
         this.producto = producto;
     }
 

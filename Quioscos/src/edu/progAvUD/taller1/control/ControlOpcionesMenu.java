@@ -108,12 +108,12 @@ public class ControlOpcionesMenu {
                 this.precioTotalPedido += precioTotalMenu;
                 break;
             case "ParaCompartir3":
-                OpcionesMenu paraCompartir3 = new ParaCompartir(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, controlProducto);
+                OpcionesMenu paraCompartir3 = new ParaCompartir(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, controlProducto, cantidadPresasAla, cantidadPresasPierna, cantidadPresasCuadro);
                 this.opcionesMenu.put(paraCompartir3, cantidadMenuComprado);
                 this.precioTotalPedido += precioTotalMenu;
                 break;
             case "ParaCompartir4":
-                OpcionesMenu paraCompartir4 = new ParaCompartir(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, tipo3, coccion3, nombre3, descripcion3, precio3, puntosEquivalentes3, identificador3, controlProducto);
+                OpcionesMenu paraCompartir4 = new ParaCompartir(nombreMenu, precioTotalMenu, puntosEquivalentesMenu, tipo, coccion, nombre, descripcion, precio, puntosEquivalentes, identificador, tipo1, coccion1, nombre1, descripcion1, precio1, puntosEquivalentes1, identificador1, tipo2, coccion2, nombre2, descripcion2, precio2, puntosEquivalentes2, identificador2, tipo3, coccion3, nombre3, descripcion3, precio3, puntosEquivalentes3, identificador3, controlProducto, cantidadPresasAla, cantidadPresasPierna, cantidadPresasCuadro, cantidadPresasPechuga);
                 this.opcionesMenu.put(paraCompartir4, cantidadMenuComprado);
                 this.precioTotalPedido += precioTotalMenu;
                 break;
