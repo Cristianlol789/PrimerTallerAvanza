@@ -26,7 +26,24 @@ public class ControlClientes {
     public ControlClientes(ControlPrincipal controlPrincipal) {
         this.clientes = new ArrayList<>();
         this.controlPrincipal = controlPrincipal;
+        crearTresClientesPredeterminados();
         crearCliente();
+    }
+
+    public void crearTresClientesPredeterminados() {
+        // Cliente 1: Con cultura definida
+        Cliente cliente1 = new Cliente(10123456, "Roberto García", 45, "Zenú", 10000);
+
+        // Cliente 2: Sin cultura definida (usando el constructor sin parámetro de cultura)
+        Cliente cliente2 = new Cliente(20234567, "María López", 32, 0);
+
+        // Cliente 3: Con cultura definida
+        Cliente cliente3 = new Cliente(30345678, "Elena Rodríguez", 58, "Nasa", 0);
+
+        // Añadimos los clientes a la lista
+        clientes.add(cliente1);
+        clientes.add(cliente2);
+        clientes.add(cliente3);
     }
 
     /**
@@ -66,20 +83,23 @@ public class ControlClientes {
      */
     public String buscarCliente(double cedula, double puntosEquivalentes) {
         boolean clienteExistenteCedula = clienteExistenteCedula(cedula);
-        if (clienteExistenteCedula == false) {
+        if (!clienteExistenteCedula) {
             for (Cliente cliente : clientes) {
                 if (cliente.getCedula() == 0) {
                     ponerCedula(cedula, cliente);
                     return colocarPuntos(cliente, puntosEquivalentes);
-                } else {
-                    crearCliente();
                 }
             }
+            // Si no encontró ninguno con cédula 0, crea uno nuevo
+            crearCliente();
+            // Asigna cédula y puntos al último creado
+            Cliente nuevo = clientes.get(clientes.size() - 1);
+            ponerCedula(cedula, nuevo);
+            return colocarPuntos(nuevo, puntosEquivalentes);
         } else {
             Cliente cliente = clienteEncontrado(cedula);
             return colocarPuntos(cliente, puntosEquivalentes);
         }
-        return null;
     }
 
     /**
@@ -154,7 +174,7 @@ public class ControlClientes {
      */
     public boolean tieneCultura(double cedula) {
         for (Cliente cliente : clientes) {
-            if (cliente.getCedula() == cedula){
+            if (cliente.getCedula() == cedula) {
                 if (cliente.getCultura() != null) {
                     return true;
                 }
